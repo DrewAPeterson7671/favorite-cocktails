@@ -5,9 +5,9 @@ end
 When('I fill in the sign up form') do
   click_link "Sign up"
 
-  fill_in "email", :with => "tester@testdomain.test"
-  fill_in "password", :with => "pa$$word"
-  fill_in "password_confirmation", :with => "pa$$word"
+  fill_in "user_email", :with => "tester@testdomain.test"
+  fill_in "user_password", :with => "pa$$word"
+  fill_in "user_password_confirmation", :with => "pa$$word"
 
   click_button "Sign up"
 end
