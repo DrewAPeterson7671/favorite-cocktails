@@ -13,7 +13,7 @@ When('I fill in the sign up form') do
 end
 
 Given('I confirm the email') do
-  open_email("tester@testdomain.test")
+  open_email('tester@testdomain.test')
 
   visit_in_email('Confirm my account')
 end
