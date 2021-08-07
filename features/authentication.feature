@@ -17,7 +17,7 @@ Scenario: User Logs In
   Then I should be logged in
 
 Scenario: User Logs out
-  Given I a registered user
+  Given I am a registered user
   And I am logged in
   And I visit the homepage
   When I click on the log out button
