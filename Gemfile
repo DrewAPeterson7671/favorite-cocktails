@@ -47,6 +47,7 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
+  gem 'email_spec'
 end
 
 group :development do
