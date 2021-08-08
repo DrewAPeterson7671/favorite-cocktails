@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails or /cocktails.json
   def index
-    @cocktails = Cocktail.all
+    @cocktails = current_user.cocktails
   end
 
   # GET /cocktails/1 or /cocktails/1.json

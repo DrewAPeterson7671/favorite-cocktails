@@ -10,11 +10,12 @@ Given('I have populated a cocktail list for this User') do
 end
 
 When('I visit the website and log in') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Signed in successfully")
 end
 
 Then('I will see the cocktail list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Frank Wallbanger")
+  expect(page).to have_content("Frank Wallbanger")
 end
 
 When('I add a new cocktail to my favorites list') do
