@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails or /cocktails.json
   def index
-    @cocktails = Cocktail.all
+    @cocktails = current_user.cocktails
   end
 
   # GET /cocktails/1 or /cocktails/1.json
@@ -13,7 +13,7 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/new
   def new
-    @cocktail = Cocktail.new
+    @cocktail = Cocktail.new 
   end
 
   # GET /cocktails/1/edit
@@ -22,7 +22,8 @@ class CocktailsController < ApplicationController
 
   # POST /cocktails or /cocktails.json
   def create
-    @cocktail = Cocktail.new(cocktail_params)
+    @cocktail = Cocktail.new cocktail_params.merge(user: current_user)
+    @cocktail.save
 
     respond_to do |format|
       if @cocktail.save
@@ -65,6 +66,6 @@ class CocktailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :ingredients, :user_id)
+      params.require(:cocktail).permit(:name, :ingredients, :user)
     end
 end
