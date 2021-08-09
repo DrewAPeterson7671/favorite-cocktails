@@ -85,3 +85,11 @@ RSpec.configure do |config|
     end
   end
 end
+
+require "support/controller_helpers"
+
+RSpec.configure do |config|
+  config.include Warden::Test::Helpers
+  config.include Devise::TestHelpers, :type => :controller
+  config.include ControllerHelpers, :type => :controller
+end

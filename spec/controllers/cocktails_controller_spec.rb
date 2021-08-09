@@ -7,7 +7,7 @@ RSpec.describe CocktailsController do
   before { log_in(user) }
 
   describe "GET #index" do
-    let(:coctails) { [
+    let(:cocktails) { [
       instance_double(Cocktail),
       instance_double(Cocktail)
     ] }
@@ -19,7 +19,7 @@ RSpec.describe CocktailsController do
     end
 
     it "looks up all cocktails that belong to the current user" do
-      expect(assigns(:cocktails)).to_eq(cocktails)
+      expect(assigns(:cocktails)).to eq(cocktails)
     end
     
   end
