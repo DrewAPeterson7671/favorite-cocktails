@@ -14,9 +14,8 @@ When('I visit the website and log in') do
 end
 
 Then('I will see the cocktail list') do
-  puts page.body
   expect(page).to have_content("Frank Wallbanger")
-  expect(page).to have_content("Frank Wallbanger")
+  expect(page).to have_content("Fuzzy Naval Orange")
 end
 
 When('I add a new cocktail to my favorites list') do
