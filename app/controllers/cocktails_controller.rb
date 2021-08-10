@@ -13,7 +13,8 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/new
   def new
-    @cocktail = Cocktail.new 
+    @cocktail = Cocktail.new
+    render :new 
   end
 
   # GET /cocktails/1/edit
@@ -23,16 +24,10 @@ class CocktailsController < ApplicationController
   # POST /cocktails or /cocktails.json
   def create
     @cocktail = Cocktail.new cocktail_params.merge(user: current_user)
-    @cocktail.save
-
-    respond_to do |format|
-      if @cocktail.save
-        format.html { redirect_to @cocktail, notice: "Cocktail was successfully created." }
-        format.json { render :show, status: :created, location: @cocktail }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @cocktail.errors, status: :unprocessable_entity }
-      end
+    if @cocktail.save
+      redirect_to cocktails_path
+    else
+      render :new
     end
   end
 
