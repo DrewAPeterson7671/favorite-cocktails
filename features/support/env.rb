@@ -9,6 +9,7 @@ require 'cucumber/rails'
 # require 'email_spec' # add this line if you use spork
 require 'email_spec/cucumber'
 
+World(FactoryBot::Syntax::Methods)
 
 # frozen_string_literal: true
 
