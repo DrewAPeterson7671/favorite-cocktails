@@ -1,4 +1,4 @@
-Given('I have populated a cocktail list for this User') do
+Given(/^I have populated a cocktail list for this User$/) do
   FactoryBot.create(:cocktail,
                       :user => @registered_user,
                       :name => "Frank Wallbanger",
@@ -9,22 +9,30 @@ Given('I have populated a cocktail list for this User') do
                       :ingredients => "Lots of Tequila, a pinch of orange")
 end
 
-When('I visit the website and log in') do
+When(/^I visit the website and log in$/) do
   expect(page).to have_content("Signed in successfully")
 end
 
 Then('I will see the cocktail list') do
-  puts page.body
+  visit root_path
+
   expect(page).to have_content("Frank Wallbanger")
   expect(page).to have_content("Fuzzy Naval Orange")
 end
 
 When('I add a new cocktail to my favorites list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link "New Cocktail"
+
+  fill_in "Name", :with => "Flaming Moe"
+  fill_in "Ingredients", :with => "Lots of booze, cough syrup, light it"
+
+  click_button "Create Cocktail"
 end
 
 Then('I should see the new cocktail in the list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
+
+  expect(page).to have_content("Flaming Moe")
 end
 
 Given('I have a cocktail in the intentory') do
