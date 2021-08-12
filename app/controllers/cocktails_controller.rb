@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
   # GET /cocktails or /cocktails.json
   def index
     @cocktails = current_user.cocktails
+    render :index
   end
 
   # GET /cocktails/1 or /cocktails/1.json

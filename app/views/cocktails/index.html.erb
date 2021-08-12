@@ -1,6 +1,12 @@
 
 <h1>Cocktails</h1>
 
+<% if @cocktails.any? %>
+  <%= @cocktails.first.name %>
+  <% else %>
+  <p> none </p>
+<% end %>
+
 <table>
   <thead>
     <tr>
