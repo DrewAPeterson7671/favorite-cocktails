@@ -110,7 +110,25 @@ RSpec.describe CocktailsController do
         expect(response).to render_template(:edit)
       end
     end
+  end
 
+  describe "DELETE #destroy" do
+    let(:cocktail) { FactoryBot.build_stubbed(:cocktail) }
+
+    before do
+      allow(Cocktail).to receive(:find).and_return(cocktail)
+      allow(cocktail).to receive(:destroy)
+
+      delete :destroy, :params => { :id => cocktail.id }
+    end
+
+    it "deletes the cocktail" do
+      expect(cocktail).to have_received(:destroy)
+    end
+
+    it "redirects to the index page" do
+      expect(response).to redirect_to(cocktails_path)
+    end
   end
 
 end
