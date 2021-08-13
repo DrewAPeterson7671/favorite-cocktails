@@ -57,6 +57,18 @@ RSpec.describe CocktailsController do
       end
     end
 
+    context "when the book can't be saved" do
+      before do
+        allow(cocktail).to receive(:save).and_return(false)
+
+        post :create, :params => { :cocktail => params }
+      end
+
+      it "redirects back to the new page" do
+        expect(response).to render_template(:new)
+      end
+    end
+
   end
   
   
