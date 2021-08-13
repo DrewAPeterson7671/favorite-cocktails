@@ -24,9 +24,9 @@ class CocktailsController < ApplicationController
 
   # POST /cocktails or /cocktails.json
   def create
-    @cocktail = Cocktail.new cocktail_params.merge(user: current_user)
+    @cocktail = current_user.cocktails.build(cocktail_params)
     if @cocktail.save
-      redirect_to cocktails_path
+      redirect_to @cocktail, notice:'Cocktail was successfully created.'
     else
       render :new
     end
