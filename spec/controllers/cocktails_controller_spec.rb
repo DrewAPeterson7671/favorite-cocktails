@@ -71,6 +71,46 @@ RSpec.describe CocktailsController do
 
   end
   
-  
+  describe "PATCH #update" do
+    let(:cocktail) { FactoryBot.build_stubbed(:cocktail) }
+
+    before do
+      allow(Cocktail).to receive(:find).and_return(cocktail)
+      allow(cocktail).to receive(:update).and_return(true)
+    end
+
+    it "updates the cocktail" do
+      patch :update, :params => {
+        :id => cocktail.id,
+        :cocktail => { :name => "New Name"} }
+
+      expect(cocktail).to have_received(:update)
+    end
+
+    context "when update succeeds" do
+      it "redirects to the cocktail page" do
+        patch :update, :params => {
+          :id => cocktail.id,
+          :cocktail => { :cocktail => "New Name" } }
+        
+        expect(response).to redirect_to(cocktail_path(cocktail))
+      end
+    end
+
+    context "when the update fails" do
+      before do
+        allow(cocktail).to receive(:update).and_return(false)
+      end
+
+      it "renders the edit page again" do
+        patch :update, :params => {
+          :id => cocktail.id,
+          :cocktail => { :name => "New Name" } }
+        
+        expect(response).to render_template(:edit)
+      end
+    end
+
+  end
 
 end

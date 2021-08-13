@@ -36,25 +36,35 @@ Then('I should see the new cocktail in the list') do
 end
 
 Given('I have a cocktail in the intentory') do
-  pending # Write code here that turns the phrase above into concrete actions
+  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Martini", :ingredients => "Lots of booze and an olive, and you can shake or stir it")
 end
 
 When('I want to change an existing cocktail') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
+
+  click_link "Edit"
+
+  fill_in "Name", :with => "Mertinini"
+
+  click_button "Update Cocktail"
 end
 
 Then('I should see the change in my list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
+
+  expect(page).to_not have_content("Martini")
+  expect(page).to have_content("Mertinini")
 end
 
 Given('I have a cocktail in my list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Kamakazi", :ingredients => "Lots of booze, more than usual")
 end
 
 When('I delete the cocktail') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
+  click_link "Destroy"
 end
 
 Then('I do not find it in my list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to_not have_content("Kamakazi")
 end
