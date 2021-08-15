@@ -48,6 +48,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'email_spec'
+  gem 'simplecov', :require => false
 end
 
 group :development do
