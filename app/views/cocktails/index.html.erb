@@ -11,8 +11,6 @@
     </tr>
   </thead>
 
-<%= render partial: "api_form" %>
-
 
   <tbody>
     <% @cocktails.each do |cocktail| %>
@@ -31,4 +29,5 @@
 <br>
 
 <%= link_to 'New Cocktail', new_cocktail_path %>
+<%= link_to 'Search for a Cocktail', search_page_path %>
 <%= button_to 'Log out', destroy_user_session_path, :method => :delete %>
