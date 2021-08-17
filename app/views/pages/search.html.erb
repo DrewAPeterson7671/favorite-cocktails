@@ -17,7 +17,13 @@
     
 
     <tbody>
-
+      <% @drinks["drinks"].each do |drink| %>
+        <tr>
+          <td><%= drink["strDrink"] %></td>
+          <td><%= drink["strAlcoholic"] %></td>
+          <td><%= drink["strCategory"] %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
