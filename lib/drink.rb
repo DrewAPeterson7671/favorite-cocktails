@@ -1,5 +1,5 @@
 require 'httparty'
-
+require 'json'
 
 
 class Drinks
@@ -17,5 +17,19 @@ end
 
 # drinks = Drinks.new("margarita")
 # puts drinks.drink_name
-# test1 = Drinks.new("martini")
-# puts test1.drink_name
+test1 = Drinks.new("martini")
+response = test1.drink_name
+
+parsed_json = JSON(response.body)
+# puts parsed_json.class
+
+
+# puts parsed_json["drinks"]
+
+# parsed_json["drinks"].each do |item|
+#   puts item["strDrink"]
+# end
+
+
+
+
