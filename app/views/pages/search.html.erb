@@ -14,13 +14,16 @@
         <th>Type</th>
       </tr>
     </thead>
+
+<%= @drinks.first[:strDrink]%>
+
     
     <tbody>
       <% @drinks.each do |drink| %>
         <tr>
-          <td><%=["strDrink"]%></td>
-          <td><%=["strAlcoholic"]%></td>
-          <td><%=["strCategory"]%></td>
+
+
+
         </tr>
       <% end %>
     </tbody>
