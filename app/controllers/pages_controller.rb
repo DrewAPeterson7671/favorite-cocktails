@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
-  require 'json'
-  require '../../lib/drink'
 
   def search
+    @search = params[:search]
+
+
     render :search
   end
 end
