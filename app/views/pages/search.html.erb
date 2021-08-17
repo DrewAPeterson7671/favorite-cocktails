@@ -1,11 +1,11 @@
 <h1>Search for Cocktails</h1>
 
-<%= form_with do |form| %>
-  <%= search_field_tag :search, params[:search], placeholder: "Search" %>
-  <%= button_tag "Search" %>
-<% end %>  
+   <%= form_tag(search_page_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+      <%= button_tag "Search", :class => 'btn', :name => nil %>
+    <% end %> 
 
-<% if @drinks.any? %>
+
   <table>
     <thead>
       <tr>
@@ -26,9 +26,13 @@
       <% end %>
     </tbody>
   </table>
-  <% else %>
+
+<br>
+<%= @search %>
+<br>
+
     <p>Search for new drinks</p>
-<% end %>
+
 
 <br>
 
