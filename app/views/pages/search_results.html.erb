@@ -1,0 +1,36 @@
+<h1>Search for Cocktails</h1>
+
+   <%= form_tag(search_results_page_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+      <%= button_tag "Search", :class => 'btn', :name => nil %>
+    <% end %> 
+
+  <% if @drinks.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Alcohol</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+        <% @drinks["drinks"].each do |drink| %>
+          <tr>
+            <td><%= drink["strDrink"] %></td>
+            <td><%= drink["strAlcoholic"] %></td>
+            <td><%= drink["strCategory"] %></td>
+          </tr>
+        <% end %>
+      <tbody>
+
+      </tbody>
+    </table>
+  <% end %>
+
+<br>
+    <p>Search for new drinks</p>
+
+
+
+
+

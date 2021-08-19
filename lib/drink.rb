@@ -17,7 +17,7 @@ end
 
 # drinks = Drinks.new("margarita")
 # puts drinks.drink_name
-test1 = Drinks.new("martini")
+test1 = Drinks.new("kamikaze")
 response = test1.drink_name
 
 parsed_json = JSON(response.body)

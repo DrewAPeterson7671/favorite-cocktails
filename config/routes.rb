@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/search' => 'pages#search', :as => 'search_page'
+  get '/search_results' => 'pages#search_results', :as => 'search_results_page'
 
   root to: 'cocktails#index'
   
