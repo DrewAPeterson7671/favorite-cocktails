@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def search_results
     @search = params[:search]
-    api_call = Drinks.new(@search.strip)
+    api_call = Drink.new(@search.strip)
     response = api_call.drink_name
     api_error_handler(response)
     render :search_results

@@ -2,7 +2,7 @@ require 'httparty'
 require 'json'
 
 
-class Drinks
+class Drink
   include HTTParty
   base_uri 'http://www.thecocktaildb.com'
 
@@ -17,7 +17,7 @@ end
 
 # drinks = Drinks.new("margarita")
 # puts drinks.drink_name
-test1 = Drinks.new("kamikaze")
+test1 = Drink.new("kamikaze")
 response = test1.drink_name
 
 parsed_json = JSON(response.body)
