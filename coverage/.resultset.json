@@ -223,8 +223,8 @@
           1,
           null,
           1,
-          25,
-          25,
+          26,
+          26,
           null,
           null,
           null,
@@ -798,31 +798,14 @@
           null
         ]
       },
-      "/home/drew/code/epicodus/my-cocktails/spec/factories/cocktails.rb": {
-        "lines": [
-          1,
-          1,
-          10,
-          10,
-          10,
-          null,
-          null
-        ]
-      },
-      "/home/drew/code/epicodus/my-cocktails/spec/factories/users.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/home/drew/code/epicodus/my-cocktails/config/routes.rb": {
         "lines": [
           1,
           1,
           null,
+          1,
+          null,
+          1,
           1,
           null,
           1,
@@ -849,6 +832,14 @@
           null
         ]
       },
+      "/home/drew/code/epicodus/my-cocktails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/drew/code/epicodus/my-cocktails/app/helpers/application_helper.rb": {
         "lines": [
           1,
@@ -861,15 +852,18 @@
           null
         ]
       },
-      "/home/drew/code/epicodus/my-cocktails/spec/support/controller_helpers.rb": {
+      "/home/drew/code/epicodus/my-cocktails/app/channels/application_cable/channel.rb": {
         "lines": [
           1,
-          null,
           1,
-          10,
           null,
-          10,
-          10,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/app/channels/application_cable/connection.rb": {
+        "lines": [
+          1,
+          1,
           null,
           null
         ]
@@ -945,11 +939,132 @@
           null
         ]
       },
-      "/home/drew/code/epicodus/my-cocktails/app/controllers/application_controller.rb": {
+      "/home/drew/code/epicodus/my-cocktails/app/controllers/pages_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/app/jobs/application_job.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/app/models/cocktail.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/spec/factories/cocktails.rb": {
+        "lines": [
+          1,
+          1,
+          10,
+          10,
+          10,
+          null,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/spec/support/controller_helpers.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          10,
+          null,
+          10,
+          10,
+          null,
+          null
+        ]
+      },
+      "/home/drew/code/epicodus/my-cocktails/spec/controllers/pages_controller_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -988,13 +1103,6 @@
           2,
           2,
           null,
-          null
-        ]
-      },
-      "/home/drew/code/epicodus/my-cocktails/app/models/cocktail.rb": {
-        "lines": [
-          1,
-          1,
           null
         ]
       },
@@ -1292,6 +1400,6 @@
         ]
       }
     },
-    "timestamp": 1629056112
+    "timestamp": 1629417731
   }
 }
