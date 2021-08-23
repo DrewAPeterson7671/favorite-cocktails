@@ -19,6 +19,8 @@
             <td><%= drink["strDrink"] %></td>
             <td><%= drink["strAlcoholic"] %></td>
             <td><%= drink["strCategory"] %></td>
+            <td><%= button_tag "Details", :class => 'btn', :name => drink["idDrink"] %></td>
+            <td><%= button_tag "Save To Favorites", :class => 'btn', :name => drink["idDrink"] %></td>
           </tr>
         <% end %>
       <tbody>
@@ -28,7 +30,7 @@
   <% end %>
 
 <br>
-    <p>Search for new drinks</p>
+    <%= link_to 'Back to Favorites', root_path %>
 
 
 
