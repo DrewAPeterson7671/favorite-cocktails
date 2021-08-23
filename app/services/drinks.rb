@@ -1,7 +1,6 @@
 require 'httparty'
 require 'json'
 
-
 class Drink
   include HTTParty
   base_uri 'http://www.thecocktaildb.com'
