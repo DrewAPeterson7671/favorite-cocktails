@@ -28,26 +28,23 @@
           <tr>
             <td colspan="4" scope="colgroup" ><%= drink["strInstructions"] %> </td>
           </tr>
-          <tr>
-            <td><%= drink["strIngredient1"] %> </td>
-            <td><%= drink["strMeasure1"] %> </td>
-          </tr>
+          <% i = 1 %>
+          <% while !drink["strIngredient" + i.to_s].nil? do %>
+            <tr>
+              <% if i > 1 %>
+                <td></td>
+              <% end %>
+              <td><%= drink["strIngredient" + i.to_s] %> </td>
+              <td><%= drink["strMeasure" + i.to_s] %> </td>
+            </tr>
+            <% i = i + 1 %>
+          <% end %>
         <% end %>
       <tbody>
 
       </tbody>
     </table>
   <% end %>
-
-  <h1>Details</h2>
-  <p>Name: <%= :name %></p>
-  <p>Category:</p>
-  <p>Alcohol:</p>
-  <p>Glass:</p>
-  <p>Instructions:</p>
-  <p>Ingredients:</p>
-
-
 
 <br>
     <%= link_to 'Back to Favorites', root_path %>
