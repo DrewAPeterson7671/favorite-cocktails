@@ -9,18 +9,28 @@
     <table>
       <thead>
         <tr>
+          <th>Image</th>
           <th>Name</th>
           <th>Alcohol</th>
           <th>Type</th>
+          <th>Glass</th>
         </tr>
       </thead>
         <% @drinks["drinks"].each do |drink| %>
           <tr>
+            <th rowspan="3" scope="rowgroup"><%= image_tag drink["strDrinkThumb"], :class => 'drink-thumb' %></th>
             <td><%= drink["strDrink"] %></td>
             <td><%= drink["strAlcoholic"] %></td>
             <td><%= drink["strCategory"] %></td>
+            <td><%= drink["strGlass"] %></td>
             <td><%= button_tag "Details", :class => 'btn', :name => drink["idDrink"] %></td>
-            <td><%= button_tag "Save To Favorites", :class => 'btn', :name => drink["idDrink"] %></td>
+          </tr>
+          <tr>
+            <td colspan="4" scope="colgroup" ><%= drink["strInstructions"] %> </td>
+          </tr>
+          <tr>
+            <td><%= drink["strIngredient1"] %> </td>
+            <td><%= drink["strMeasure1"] %> </td>
           </tr>
         <% end %>
       <tbody>
@@ -28,6 +38,16 @@
       </tbody>
     </table>
   <% end %>
+
+  <h1>Details</h2>
+  <p>Name: <%= :name %></p>
+  <p>Category:</p>
+  <p>Alcohol:</p>
+  <p>Glass:</p>
+  <p>Instructions:</p>
+  <p>Ingredients:</p>
+
+
 
 <br>
     <%= link_to 'Back to Favorites', root_path %>
