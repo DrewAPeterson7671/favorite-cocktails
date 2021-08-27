@@ -1,5 +1,3 @@
-<%= current_user.id %>
-<p>70044407074280</p>
 <h1>Search for Cocktails</h1>
 
    <%= form_tag(search_results_page_path, method: :get) do %>
@@ -26,7 +24,7 @@
             <td><%= drink["strAlcoholic"] %></td>
             <td><%= drink["strCategory"] %></td>
             <td><%= drink["strGlass"] %></td>
-            <td><%= button_to "Add Favorite", { :controller => "cocktails", :action => "create", :cocktail => {:name => drink["strDrink"], :category => drink["strCategory"], :alcoholic => drink["strAlcoholic"], :glass => drink["strGlass"], :instructions => drink["strInstructions"], :ingredients => drink["strIngredient1"], :api_id_drink => drink["idDrink"], :api_image_url => drink["strDrinkThumb"], :user => current_user }}, {:method => :post} %></td>
+            <td><%= button_to "Add Favorite", { :controller => "cocktails", :action => "create", :cocktail => {:name => drink["strDrink"], :category => drink["strCategory"], :alcoholic => drink["strAlcoholic"], :glass => drink["strGlass"], :instructions => drink["strInstructions"], :ingredients => drink["strIngredient1"], :api_id_drink => drink["idDrink"], :api_image_url => drink["strDrinkThumb"] }}, {:method => :post} %></td>
           </tr>
           <tr>
             <td colspan="4" scope="colgroup" ><%= drink["strInstructions"] %> </td>
