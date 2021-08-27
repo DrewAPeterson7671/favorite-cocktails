@@ -3,6 +3,30 @@
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
+<% if !@cocktail.api_image_url.nil? %>
+  <%= image_tag @cocktail.api_image_url, :class => 'drink-thumb' %>
+<% end %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @cocktail.category %>
+</p>
+
+<p>
+  <strong>Alcoholic:</strong>
+  <%= @cocktail.alcoholic%>
+</p>
+
+<p>
+  <strong>Glass:</strong>
+  <%= @cocktail.glass%>
+</p>
+
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @cocktail.instructions %>
+</p>
 
 <p>
   <strong>Ingredients:</strong>

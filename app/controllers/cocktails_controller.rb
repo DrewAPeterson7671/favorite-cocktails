@@ -1,3 +1,5 @@
+require 'drinks'
+
 class CocktailsController < ApplicationController
 
   before_action :set_cocktail, only: %i[ show edit update destroy ]
@@ -62,6 +64,6 @@ class CocktailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :category, :alcoholic, :glass, :instructions, :ingredients, :user)
+      params.require(:cocktail).permit(:name, :category, :alcoholic, :glass, :instructions, :ingredients, :api_id_drink, :api_image_url)
     end
 end

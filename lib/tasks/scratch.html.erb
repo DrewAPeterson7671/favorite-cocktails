@@ -5,3 +5,6 @@
           <td><%= drink["strCategory"] %></td>
         </tr>
       <% end %>
+
+    <td><%= button_to "Add Favorite", { :controller => "cocktails", :action => "create", :name => drink["strDrink"], :category => drink["strCategory"], :alcoholic => drink["strAlcoholic"], :glass => drink["strGlass"], :instructions => drink["strInstructions"], :ingredients => drink["strIngredient1"], :api_id_drink => drink["idDrink"], :api_image_url => drink["strDrinkThumb"], :user => current_user } %></td>
+

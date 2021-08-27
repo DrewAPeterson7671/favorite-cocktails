@@ -24,7 +24,10 @@ When('I add a new cocktail to my favorites list') do
   click_link "New Cocktail"
 
   fill_in "Name", :with => "Flaming Moe"
-  fill_in "Ingredients", :with => "Lots of booze, cough syrup, light it"
+  fill_in "Ingredients & Measures", :with => "Lots of booze, cough syrup, light it"
+  fill_in "Instructions", :with => "Drink"
+  select("Cocktail", from: "Category")
+  select("Cocktail glass", from: "Glass")
 
   click_button "Create Cocktail"
 end

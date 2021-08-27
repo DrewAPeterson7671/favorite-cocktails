@@ -1,3 +1,5 @@
+require 'drinks'
+
 class PagesController < ApplicationController
 
   def search

@@ -4,6 +4,7 @@
         <%= text_field_tag(:search, params[:search]) %>
       <%= button_tag "Search", :class => 'btn', :name => nil %>
     <% end %> 
+  
 
   <% if @drinks.any? %>
     <table>
@@ -23,7 +24,7 @@
             <td><%= drink["strAlcoholic"] %></td>
             <td><%= drink["strCategory"] %></td>
             <td><%= drink["strGlass"] %></td>
-            <td><%= button_tag "Details", :class => 'btn', :name => drink["idDrink"] %></td>
+            <td><%= button_to "Add Favorite", { :controller => "cocktails", :action => "create", :cocktail => {:name => drink["strDrink"], :category => drink["strCategory"], :alcoholic => drink["strAlcoholic"], :glass => drink["strGlass"], :instructions => drink["strInstructions"], :ingredients => drink["strIngredient1"], :api_id_drink => drink["idDrink"], :api_image_url => drink["strDrinkThumb"] }}, {:method => :post} %></td>
           </tr>
           <tr>
             <td colspan="4" scope="colgroup" ><%= drink["strInstructions"] %> </td>
