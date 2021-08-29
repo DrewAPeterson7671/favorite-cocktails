@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_202650) do
+ActiveRecord::Schema.define(version: 2021_08_29_202956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,36 @@ ActiveRecord::Schema.define(version: 2021_08_26_202650) do
     t.string "glass"
     t.text "instructions"
     t.string "api_image_url"
+    t.text "ingredient1"
+    t.text "ingredient2"
+    t.text "ingredient3"
+    t.text "ingredient4"
+    t.text "ingredient5"
+    t.text "ingredient6"
+    t.text "ingredient7"
+    t.text "ingredient8"
+    t.text "ingredient9"
+    t.text "ingredient10"
+    t.text "ingredient11"
+    t.text "ingredient12"
+    t.text "ingredient13"
+    t.text "ingredient14"
+    t.text "ingredient15"
+    t.text "measure1"
+    t.text "measure2"
+    t.text "measure3"
+    t.text "measure4"
+    t.text "measure5"
+    t.text "measure6"
+    t.text "measure7"
+    t.text "measure8"
+    t.text "measure9"
+    t.text "measure10"
+    t.text "measure11"
+    t.text "measure12"
+    t.text "measure13"
+    t.text "measure14"
+    t.text "measure15"
   end
 
   create_table "users", force: :cascade do |t|
