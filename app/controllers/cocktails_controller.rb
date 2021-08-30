@@ -27,7 +27,11 @@ class CocktailsController < ApplicationController
   # POST /cocktails or /cocktails.json
   def create
     @cocktail = current_user.cocktails.build(cocktail_params)
-    @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
+    if !@cocktail.api_image_url.nil?
+      Cocktail.capture_api_image(@cocktail)
+    else
+      @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
+    end
     if @cocktail.save
       redirect_to @cocktail, notice:'Cocktail was successfully created.'
     else
