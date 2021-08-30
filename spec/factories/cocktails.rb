@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :cocktail do
     name { "MyString" }
-    ingredients { "MyText" }
+    ingredient1 { "MyString" }
+    measure1 { "MyString"}
     user_id { 1 }
     category { "MyString" }
     glass  { "MyString" }
