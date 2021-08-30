@@ -1,5 +1,6 @@
 class Cocktail < ApplicationRecord
   belongs_to :user
+  has_one_attached :cocktail_photo
 
   validates :name, presence: true
   validates :category, presence: true

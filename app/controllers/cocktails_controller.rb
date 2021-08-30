@@ -27,6 +27,7 @@ class CocktailsController < ApplicationController
   # POST /cocktails or /cocktails.json
   def create
     @cocktail = current_user.cocktails.build(cocktail_params)
+    @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
     if @cocktail.save
       redirect_to @cocktail, notice:'Cocktail was successfully created.'
     else
@@ -38,6 +39,10 @@ class CocktailsController < ApplicationController
   def update
     respond_to do |format|
       if @cocktail.update(cocktail_params)
+        if params[:cocktail][:cocktail_photo].present?
+          @cocktail.cocktail_photo.purge
+          @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
+        end
         format.html { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
         format.json { render :show, status: :ok, location: @cocktail }
       else
