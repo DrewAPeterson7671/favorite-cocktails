@@ -27,7 +27,7 @@ RSpec.describe CocktailsController do
 
   describe 'POST #create' do
     let(:cocktail) { FactoryBot.build_stubbed(:cocktail) } 
-    let(:params) { { :name => "Martini", :ingredients => "Booze and an olive" } }
+    let(:params) { { :name => "Martini", :ingredient1 => "Booze", :measure1 => "3 oz" } }
 
     before do
       allow(cocktail).to receive(:save)

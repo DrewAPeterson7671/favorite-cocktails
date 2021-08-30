@@ -2,11 +2,13 @@ Given(/^I have populated a cocktail list for this User$/) do
   FactoryBot.create(:cocktail,
                       :user => @registered_user,
                       :name => "Frank Wallbanger",
-                      :ingredients => "Lots of Booze, a pinch of lime")
+                      :ingredient1 => "Booze",
+                      :measure1 => "2oz")
   FactoryBot.create(:cocktail,
                       :user => @registered_user,
                       :name => "Fuzzy Naval Orange",
-                      :ingredients => "Lots of Tequila, a pinch of orange")
+                      :ingredient1 => "Tequila",
+                      :measure1 => "Lots")
 end
 
 When(/^I visit the website and log in$/) do
@@ -24,7 +26,8 @@ When('I add a new cocktail to my favorites list') do
   click_link "New Cocktail"
 
   fill_in "Name", :with => "Flaming Moe"
-  fill_in "Ingredients & Measures", :with => "Lots of booze, cough syrup, light it"
+  fill_in "Measure 1",	:with => "4 oz" 
+  fill_in "Ingredient 1", :with => "Vodka"
   fill_in "Instructions", :with => "Drink"
   select("Cocktail", from: "Category")
   select("Cocktail glass", from: "Glass")
@@ -39,7 +42,7 @@ Then('I should see the new cocktail in the list') do
 end
 
 Given('I have a cocktail in the intentory') do
-  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Martini", :ingredients => "Lots of booze and an olive, and you can shake or stir it")
+  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Martini", :ingredient1 => "Whiskey", :measure1 => "6 oz")
 end
 
 When('I want to change an existing cocktail') do
@@ -60,7 +63,7 @@ Then('I should see the change in my list') do
 end
 
 Given('I have a cocktail in my list') do
-  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Kamakazi", :ingredients => "Lots of booze, more than usual")
+  FactoryBot.create(:cocktail, :user => @registered_user, :name => "Kamikaze", :ingredient1 => "Gin", :measure1 => "5 oz")
 end
 
 When('I delete the cocktail') do
@@ -69,5 +72,5 @@ When('I delete the cocktail') do
 end
 
 Then('I do not find it in my list') do
-  expect(page).to_not have_content("Kamakazi")
+  expect(page).to_not have_content("Kamikaze")
 end
