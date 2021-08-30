@@ -34,10 +34,10 @@
 <div class="form-grid-containers">
   <% 15.times do |i| %>
     <div>
-      <%= @cocktail[:"#{"measure"}#{i}"] %>
+      <%= @cocktail[:"#{"measure"}#{i+1}"] %>
     </div>
     <div>
-      <%= @cocktail[:"#{"ingredient"}#{i}"] %>
+      <%= @cocktail[:"#{"ingredient"}#{i+1}"] %>
     </div>
   <% end %>
 </div>
