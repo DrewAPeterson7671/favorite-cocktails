@@ -6,7 +6,9 @@
 <% if !@cocktail.api_image_url.nil? %>
   <%= image_tag @cocktail.api_image_url, :class => 'drink-thumb' %>
 <% end %>
-
+<% if @cocktail.cocktail_photo.attached? %>
+  <%= image_tag @cocktail.cocktail_photo, :class => 'drink-thumb' %>
+<% end %>
 <p>
   <strong>Category:</strong>
   <%= @cocktail.category %>

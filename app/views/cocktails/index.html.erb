@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Ingredients</th>
       <th>User</th>
@@ -15,6 +16,14 @@
   <tbody>
     <% @cocktails.each do |cocktail| %>
       <tr>
+        <td>
+          <% if !cocktail.api_image_url.nil? %>
+            <%= image_tag cocktail.api_image_url, :class => 'drink-thumb' %>
+          <% end %>
+          <% if cocktail.cocktail_photo.attached? %>
+            <%= image_tag cocktail.cocktail_photo, :class => 'drink-thumb' %>
+          <% end %>
+        </td>
         <td><%= cocktail.name %></td>
         <td><%= cocktail.ingredient1 %></td>
         <td><%= cocktail.user_id %></td>
