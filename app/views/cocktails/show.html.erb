@@ -28,10 +28,19 @@
   <%= @cocktail.instructions %>
 </p>
 
-<p>
+<p>  
   <strong>Ingredients:</strong>
-  <%= @cocktail.ingredients %>
 </p>
+<div class="form-grid-containers">
+  <% 15.times do |i| %>
+    <div>
+      <%= @cocktail[:"#{"measure"}#{i}"] %>
+    </div>
+    <div>
+      <%= @cocktail[:"#{"ingredient"}#{i}"] %>
+    </div>
+  <% end %>
+</div>
 
 <p>
   <strong>User:</strong>

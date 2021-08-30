@@ -64,6 +64,43 @@ class CocktailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :category, :alcoholic, :glass, :instructions, :ingredients, :api_id_drink, :api_image_url)
+      params.require(:cocktail).permit(
+        :name,
+        :category,
+        :alcoholic,
+        :glass,
+        :instructions,
+        :ingredient1,
+        :ingredient2,
+        :ingredient3,
+        :ingredient4,
+        :ingredient5,
+        :ingredient6,
+        :ingredient7,
+        :ingredient8,
+        :ingredient9,
+        :ingredient10,
+        :ingredient11,
+        :ingredient12,
+        :ingredient13,
+        :ingredient14,
+        :ingredient15,
+        :measure1,
+        :measure2,
+        :measure3,
+        :measure4,
+        :measure5,
+        :measure6,
+        :measure7,
+        :measure8,
+        :measure9,
+        :measure10,
+        :measure11,
+        :measure12,
+        :measure13,
+        :measure14,
+        :measure15,
+        :api_id_drink, 
+        :api_image_url)
     end
 end

@@ -5,3 +5,12 @@
   width: 100px;
   height: 100px
 }
+
+.form-grid-containers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+// .form-flex-item {
+
+// }

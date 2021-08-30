@@ -38,11 +38,25 @@
     <%= form.text_area :instructions %>
   </div>
 
-  <div class="field">
-    <%= form.label :ingredients, "Ingredients & Measures" %>
-    <%= form.text_area :ingredients %>
-  </div>
+  <h3>Ingredients & Measures</h3>
 
+  <div class="form-grid-containers">
+
+  <% 15.times do  |i| %>
+
+    <div class="field">
+      <%= form.label :"#{"measure"}#{i}", "Measure" %>
+      <%= form.text_field :"#{"measure"}#{i}" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :"#{"ingredient"}#{i}", "Ingredient" %>
+      <%= form.text_field :"#{"ingredient"}#{i}" %>
+    </div>
+
+  <% end %>
+
+  </div>
 
   <div class="actions">
     <%= form.submit %>
