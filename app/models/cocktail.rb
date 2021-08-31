@@ -16,12 +16,9 @@ class Cocktail < ApplicationRecord
   
   
   def self.capture_api_image(cocktail)
-    # "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg"
     filename = File.basename(URI.parse(cocktail.api_image_url).path)
     file = URI.open(cocktail.api_image_url)
-    # medium.image.attach(io: file, filename: filename, content_type: 'image/jpg')
     cocktail.cocktail_photo.attach(io: file, filename: filename, content_type: 'image/jpg')    
-    # @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
   end
 
 end

@@ -17,7 +17,6 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td>
-
           <% if cocktail.cocktail_photo.attached? %>
             <%= image_tag cocktail.cocktail_photo, :class => 'drink-thumb' %>
           <% end %>
