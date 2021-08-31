@@ -3,9 +3,11 @@
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
+
 <% if @cocktail.cocktail_photo.attached? %>
   <%= image_tag @cocktail.cocktail_photo, :class => 'drink-thumb' %>
 <% end %>
+
 <p>
   <strong>Category:</strong>
   <%= @cocktail.category %>
