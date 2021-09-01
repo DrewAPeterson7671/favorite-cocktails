@@ -10,9 +10,7 @@ class Cocktail < ApplicationRecord
   validates :instructions, presence: true
   validates :ingredient1, presence: true
   validates_length_of :instructions, maximum: 500
-  # validates :cocktail_photo, { 
-  #   presence: true 
-  # }
+
   
   
   def self.capture_api_image(cocktail)
