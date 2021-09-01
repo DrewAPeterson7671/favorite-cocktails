@@ -42,6 +42,7 @@ gem 'uri'
 gem 'open-uri'
 gem 'aws-sdk-rails', '~> 3'
 gem 'aws-sdk-s3', '~> 1'
+gem 'bootstrap', '~> 5.1.0'
 
 
 group :development, :test do
