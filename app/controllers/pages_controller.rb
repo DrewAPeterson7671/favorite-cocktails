@@ -2,6 +2,12 @@ require 'drinks'
 
 class PagesController < ApplicationController
 
+  before_action :authenticate_user!, :only =>[:search, :search_results]
+
+  def home
+    render :home
+  end
+
   def search
     render :search
   end
