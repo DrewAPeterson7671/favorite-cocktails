@@ -2,6 +2,7 @@ require 'drinks'
 
 class CocktailsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_cocktail, only: %i[ show edit update destroy ]
 
   # GET /cocktails or /cocktails.json
