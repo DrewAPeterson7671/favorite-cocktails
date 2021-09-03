@@ -12,5 +12,79 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "cocktails.scss";
- @import "scaffolds.scss";
+
+ @font-face {
+  font-family: 'Cocktails';
+  src: url('Cocktails.ttf');
+}
+
+@font-face {
+  font-family: 'Futura-Book-font';
+  src: url('Futura-Book-font.ttf');
+}
+
+
+:root {
+  --clr-orange-yellow-crayola: #FFD35C;
+  --clr-orange-red: #FC6722;
+  --clr-erie-black: #262626;
+  --clr-violet-color-wheel: #8000fe;
+  --clr-fuschsia: #ff00ff;
+
+  // --ff-logo: 'Cocktails';
+  // --ff-normal: 'Futura-Book-font';
+}
+
+.navbar {
+  margin-top: -5px;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+}
+
+
+.logo-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo-img {
+  order: 1;
+  height: 100px;
+}
+
+.logo-title {
+  margin-left: 50px;
+  font-family: 'Cocktails';
+  order: 2;
+  // font-family: var(-ff-logo);
+  // color: var(--clr-mini-pink);
+}
+
+.synopsis > h2 {
+  font-family: 'Futura-Book-font';
+  color: var(--clr-violet-color-wheel);
+  // font-family: var(-ff-normal);
+}
+
+
+
+.drink-thumb {
+  width: 100px;
+  height: 100px
+}
+
+.form-grid-containers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flash-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
