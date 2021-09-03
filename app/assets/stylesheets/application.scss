@@ -25,22 +25,36 @@
 
 
 :root {
-  --clr-orange-yellow-crayola: #FFD35C;
-  --clr-orange-red: #FC6722;
-  --clr-erie-black: #262626;
-  --clr-violet-color-wheel: #8000fe;
+  --clr-yellow: #FFD35C;
+  --clr-orange: #FC6722;
+  --clr-black: #262626;
+  --clr-violet: #8000fe;
   --clr-fuschsia: #ff00ff;
 
   // --ff-logo: 'Cocktails';
   // --ff-normal: 'Futura-Book-font';
 }
 
+a {
+  color: var(--clr-violet)
+}
+
 .navbar {
   margin-top: -5px;
   display: flex;
-  align-content: space-between;
   justify-content: center;
 }
+
+.navbar > ul {
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// .navbar > li {
+
+// }
 
 
 .logo-flex {
@@ -63,10 +77,10 @@
   // color: var(--clr-mini-pink);
 }
 
-.synopsis > h2 {
+.synopsis {
   font-family: 'Futura-Book-font';
   color: var(--clr-violet-color-wheel);
-  // font-family: var(-ff-normal);
+  text-align: center;
 }
 
 
