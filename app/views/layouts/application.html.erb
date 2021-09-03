@@ -18,8 +18,10 @@
       <%= content_tag(:p, notice, class: 'flash') if notice %>
       <%= content_tag(:p, alert,  class: 'flash' ) if alert  %>
     </div>
-
-    <%= yield %>
+    
+    <div class="body-wrapper">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
