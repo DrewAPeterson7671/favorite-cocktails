@@ -1,1 +1,26 @@
-<h1 class="title">My Favorite Cocktails</h1>
+
+<header>
+  <div class="navbar">
+    <ul>
+      <il><%= link_to 'Home', root_path %></il>
+      <il><%= link_to 'My Favorites', cocktails_path %></il>
+      <il><%= link_to 'Search for Drinks', search_page_path %></il>
+      <il><a href="">About</a></il>
+      <il><%= link_to 'Log In', new_user_registration_path %></il>
+    </ul>
+  </div>
+  <div class="logo-flex">
+    <%= image_tag 'martini.webp', class: 'logo-img' %>
+    <h1 class="logo-title">My Favorite Cocktails</h1>
+  </div>
+</header>
+
+<main>
+  <section class="synopsis">
+    <h2>Find. Mix. Drink. Favorite. Drink Anytime.</h2>
+  </section>
+  <section class="about">
+  </section>
+</main>
+
+
