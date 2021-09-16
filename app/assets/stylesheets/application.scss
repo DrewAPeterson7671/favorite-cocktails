@@ -32,49 +32,89 @@
   --clr-violet: #8000fe;
   --clr-fuschsia: #ff70ff;
 
-  // --ff-logo: 'Cocktails';
-  // --ff-normal: 'Futura-Book-font';
+  --ff-logo: 'Cocktails', sans-serif;
+  --ff-normal: 'Futura-Book-font' serif;
 }
 
-.body-wrapper {
-  font-family: 'Futura-Book-font';
+html {
+  box-sizing: border-box;
+  font-family: var(--ff-normal);
+  color: var(--clr-black);
+  font-size: 1.125rem;
 }
 
-a {
-  color: var(--clr-yellow)
+// Typography
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
+
+h2,
+h3 {
+  text-align: center;
+  line-height: .8;
+  font-size: 1.5rem;
+  color: var(--clr-violet);
+}
+
+p {
+  margin-bottom: 0.85em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// .body-wrapper {
+  // }
+  
+// Navigation
 
 .navbar {
   margin-top: -5px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  // justify-content: center;
   background: var(--clr-violet)
 }
 
-.navbar > ul {
-  // justify-content: space-between;
-  list-style-type: none;
+.navbar ul {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-// .navbar > li {
+.navbar a {
+  display: inline-block;
+  padding: .5em;
+  color: var(--clr-white);
+  text-decoration: none;
+}
 
-// }
+.navbar a:focus,
+.navbar a:hover {
+  color: var(--clr-fuschsia);
+  text-decoration: underline;
+}
 
+
+// Header
 
 .logo-grid {
-  margin-top: 50px;
+  margin-top: 1rem;
   display: grid;
-  // grid-template-columns: [first] auto [second] auto;
-
-  grid-template-columns: 90px 385px;
+  grid-template-columns: 90px 415px;
   column-gap: 20px;
   row-gap: 0px;
   justify-content: center;
   justify-items: center;
-  // align-items: center;
+  padding: .5em 0 1em;
   
 }
 
@@ -88,9 +128,10 @@ a {
   // margin-left: 50px;
   // justify-content: center;
   align-self: end;
-  font-family: 'Cocktails';
+  font-family: var(--ff-logo);
   grid-column: 2/2;
   grid-row: 1/1;
+  white-space: nowrap;
   // font-family: var(-ff-logo);
   // color: var(--clr-mini-pink);
 }
@@ -102,7 +143,30 @@ a {
   color: var(--clr-violet);
 }
 
+.splash-image {
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  object-fit: cover;
+}
 
+.splash-image img {
+  // margin: -100px, 0px, 100px, 0px;
+  margin-top: -60px;
+}
+
+// Cards
+
+
+
+
+// Buttons
+
+// Homepage Styles
+
+
+// Search & Favorites Styles
 
 .drink-thumb {
   width: 100px;
