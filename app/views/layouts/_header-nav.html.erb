@@ -4,8 +4,13 @@
       <il><%= link_to 'Home', root_path, class: 'nav-home' %></il>
       <il><%= link_to 'My Favorites', cocktails_path, class: 'nav-fav' %></il>
       <il><%= link_to 'Search for Drinks', search_page_path, class: 'nav-search' %></il>
+      <il><%= link_to 'Create Cocktail', new_cocktail_path, class: 'nav-search' %></il>
       <il><a href="", class="nav-about">About</a></il>
-      <il><%= link_to 'Log In', new_user_registration_path, class: 'nav-login' %></il>
+      <% if current_user %>
+        <il><%= link_to 'Log Out', destroy_user_session_path, :method => :delete, class: 'nav-login' %></il>
+      <% else %>
+        <il><%= link_to 'Log In', new_user_registration_path, class: 'nav-login' %></il>
+      <% end %>
     </ul>
   </div>
   <div class="logo-grid">
