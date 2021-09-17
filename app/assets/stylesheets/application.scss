@@ -23,6 +23,10 @@
   src: url('Futura-Book-font.ttf');
 }
 
+@font-face {
+  font-family: 'Arial';
+  src: url('Arial.ttf');
+}
 
 :root {
   --clr-white: #FFFFFF;
@@ -34,8 +38,8 @@
   --clr-grey: #e9e9e9;
 
   --ff-logo: 'Cocktails', sans-serif;
-  --ff-header: 'Futura-Book-font' serif;
-  --ff-body: sans-serif;
+  --ff-header: 'Futura-Book-font', sans-serif;
+  --ff-body: 'Arial', sans-serif;
 }
 
 html {
@@ -236,6 +240,7 @@ img {
 // Will Paginate Styling
 
 .pagination {
+  margin-top: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -261,7 +266,7 @@ img {
     text-decoration: none;
     color: var(--clr-violet);
     border: 1px solid var(--clr-violet); }
-    .pagination a:hover, .pagination a:focus {
+  .pagination a:hover, .pagination a:focus {
       color: var(--clr-black);
       border-color: var(--clr-black); }
   .pagination .page_info {
@@ -271,7 +276,7 @@ img {
     width: 22em;
     margin-bottom: 0.3em;
     text-align: center; }
-    .pagination .page_info b {
+  .pagination .page_info b {
       color: var(--clr-black);
       background: var(--clr-violet);
       padding: 0.1em 0.25em; }
