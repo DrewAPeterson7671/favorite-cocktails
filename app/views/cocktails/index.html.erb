@@ -1,5 +1,5 @@
 
-<div class='list-background'>
+
   <h2>My Favorites</h2>
 
     <div class="card-grid">
@@ -28,11 +28,14 @@
                 <%= link_to 'Edit', edit_cocktail_path(cocktail), :class => 'card-link' %>
                 <%= link_to 'Remove', cocktail, :class => 'card-link', method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
-            <%# </div> %>
           </div>
         <% end %>
       <% else %>
         <p>No favorites chosen yet.</p>
       <% end %>
+    </div>
 
-</div>
+    <div class='pagination'>
+      <%= will_paginate @cocktails %>
+    </div>
+
