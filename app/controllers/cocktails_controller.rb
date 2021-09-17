@@ -7,7 +7,7 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails or /cocktails.json
   def index
-    @cocktails = current_user.cocktails
+    @cocktails = current_user.cocktails.paginate(page: params[:page], per_page: 16)
     render :index
   end
 
