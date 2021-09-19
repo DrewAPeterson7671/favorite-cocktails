@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
     case response.code
     when 200
-      flash[:alert] = "Search Complete"
+      flash[:notice] = "Search Complete"
     when 404
       flash[:alert] = "Sorry, That cocktail wasn't found."
       @drinks = {}

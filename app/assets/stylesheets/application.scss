@@ -289,15 +289,7 @@ img {
     overflow: hidden; 
 }
 
-// .card-link {
-
-// }
-
-
-// Buttons
-
 // Homepage Styles
-
 
 .splash-image {
   height: 250px;
@@ -315,6 +307,10 @@ img {
 
 // Search & Favorites Styles
 
+.search {
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
 
 
@@ -325,10 +321,16 @@ img {
   grid-template-columns: 1fr 1fr;
 }
 
+.flash {
+  display: inline-block;
+  background: #f9f8ea;
+}
+
 .flash-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 
