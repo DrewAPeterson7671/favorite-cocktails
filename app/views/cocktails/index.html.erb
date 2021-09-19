@@ -1,41 +1,41 @@
 
+<h2>My Favorites</h2>
 
-  <h2>My Favorites</h2>
-
-    <div class="card-grid">
-      <% if @cocktails.any? %>
-        <% @cocktails.each do |cocktail| %>
-          <div class='card'>
-            <% if cocktail.cocktail_photo.attached? %>
-              <%= image_tag cocktail.cocktail_photo, :class => 'drink-thumb' %>
-            <% end %>
-            <%# <div class='card-body'> %>
-              <div class='card-name'>
-                <h3><%= cocktail.name %></h3>
-              </div>
-              <div class='card-ingredients'>
-                <h4>Main Ingredients:</h4>
-                <p><%= cocktail.ingredient1 %></p>
-                <% if cocktail.ingredient2? %>
-                  <p><%= cocktail.ingredient2 %></p>
-                <% end %>
-                <% if cocktail.ingredient3? %>
-                  <p><%= cocktail.ingredient3 %></p>
-                <% end %>
-              </div>
-              <div class='card-buttons'>
-                <%= link_to 'Details', cocktail, :class => 'card-link' %>
-                <%= link_to 'Edit', edit_cocktail_path(cocktail), :class => 'card-link' %>
-                <%= link_to 'Remove', cocktail, :class => 'card-link', method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-          </div>
+<div class="card-grid">
+  <% if @cocktails.any? %>
+    <% @cocktails.each do |cocktail| %>
+      <div class='card'>
+        <% if cocktail.cocktail_photo.attached? %>
+          <%= image_tag cocktail.cocktail_photo, :class => 'drink-thumb' %>
         <% end %>
-      <% else %>
-        <p>No favorites chosen yet.</p>
-      <% end %>
-    </div>
+          <div class='card-name'>
+            <h3><%= link_to cocktail.name, cocktail %></h3>
+          </div>
+          <div class='card-ingredients'>
+            <p><%= cocktail.ingredient1 %></p>
+            <% if cocktail.ingredient2? %>
+              <p><%= cocktail.ingredient2 %></p>
+            <% end %>
+            <% if cocktail.ingredient3? %>
+              <p><%= cocktail.ingredient3 %></p>
+            <% end %>
+            <% if cocktail.ingredient4? %>
+              <p><%= cocktail.ingredient4 %></p>
+            <% end %>
+          </div>
+          <div class='card-buttons'>
+            <%= link_to 'Details', cocktail, :class => 'card-link' %>
+            <%= link_to 'Edit', edit_cocktail_path(cocktail), :class => 'card-link' %>
+            <%= link_to 'Remove', cocktail, :class => 'card-link', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No favorites chosen yet.</p>
+  <% end %>
+</div>
 
-    <div class='pagination'>
-      <%= will_paginate @cocktails %>
-    </div>
+<div class='pagination'>
+  <%= will_paginate @cocktails %>
+</div>
 
