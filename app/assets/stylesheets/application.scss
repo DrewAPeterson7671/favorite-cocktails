@@ -238,21 +238,27 @@ img {
   display: none;
 }
 
-.search-card {
+.card-expand {
+  width: 400px;
   height: 800px;
 }
 
-// .search-card-grid {
-//   margin-left: 1rem;
-//   margin-right: 1rem;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-//   grid-auto-flow: row;
-//   grid-gap: 1em;
-//   align-items: center;
-//   justify-content: center;
-//   justify-items: stretch;
-// }
+.search-card {
+  width: 400px;
+  height: 800px;
+}
+
+.search-grid {
+  // margin-left: 1rem;
+  // margin-right: 1rem;
+  // display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  // grid-auto-flow: row;
+  // grid-gap: 1em;
+  // align-items: center;
+  // justify-content: center;
+  // justify-items: stretch;
+}
 
 // .search-card {
 //   display: grid;
