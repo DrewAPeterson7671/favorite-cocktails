@@ -9,15 +9,14 @@ class PagesController < ApplicationController
   end
 
   def search
-    render :search
-  end
-
-  def search_results
-    @search = params[:search]
-    api_call = Drink.new(@search.strip)
-    response = api_call.drink_name
-    api_error_handler(response)
-    render :search_results
+    if params[:search].blank?
+      return
+    else
+      @search = params[:search]
+      api_call = Drink.new(@search.strip)
+      response = api_call.drink_name
+      api_error_handler(response)
+     end
   end
   
   private
