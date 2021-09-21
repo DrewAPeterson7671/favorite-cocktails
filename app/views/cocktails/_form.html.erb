@@ -17,28 +17,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :category %>
-    <%= form.select :category, ["Ordinary Drink", "Cocktail", "Milk / Float / Shake", "Other/Unknown", "Cocoa", "Shot", "Coffee / Tea", "Homemade Liqueur", "Punch / Party Drink", "Beer", "Soft Drink / Soda"] %>
+    <%= form.label :cocktail_photo %>
+    <%= form.file_field :cocktail_photo %>
   </div>
-
-  <div class="field">
-    <%= form.radio_button :alcoholic, "Alcoholic", checked: true %>
-    <%= form.label :alcoholic, "Alcoholic" %>
-    <%= form.radio_button :alcoholic, "Non alcoholic" %>
-    <%= form.label :alcoholic, "Non alcoholic" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :glass %>
-    <%= form.select :glass, ["Balloon Glass", "Beer Glass", "Beer mug", "Beer pilsner", "Brandy snifter", "Champagne flute", "Cocktail glass", "Coffee mug", "Collins glass", "Copper Mug", "Cordial glass", "Coupe Glass", "Highball glass", "Hurricane glass", "Irish coffee cup", "Jar", "Margarita glass", "Margarita/Coupette glass", "Martini Glass", "Mason jar",	"Nick and Nora Glass", "Old-fashioned glass", "Parfait glass", "Pint glass", "Pitcher", "Pousse cafe glass", "Punch bowl", "Shot glass", "Whiskey Glass", "Whiskey sour glass", "White wine glass", "Wine Glass"] %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instructions %>
-    <%= form.text_area :instructions %>
-  </div>
-
-  <%= form.file_field :cocktail_photo %>
 
   <h3>Ingredients & Measures</h3>
 
@@ -58,6 +39,16 @@
 
   <% end %>
 
+  </div>
+
+  <div class="field">
+    <%= form.label :glass %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructions %>
+    <%= form.text_area :instructions %>
   </div>
 
   <div class="actions">
