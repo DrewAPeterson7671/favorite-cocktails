@@ -1,0 +1,16 @@
+          <% i = 1 %>
+          <% while !drink["strIngredient" + i.to_s].nil? do %>
+            <% if i > 1 %>
+            <% end %>
+            <p><%= drink["strMeasure" + i.to_s] %>
+            <%= drink["strIngredient" + i.to_s] %>
+            </p>
+            
+            <% i = i + 1 %>
+          <% end %>
+
+
+
+          <%= drink["strInstructions"] %>
+
+          <p>Served in <%= drink["strGlass"] %></p>

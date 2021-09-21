@@ -34,7 +34,7 @@ class CocktailsController < ApplicationController
       @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
     end
     if @cocktail.save
-      redirect_to @cocktail, notice:'Cocktail was successfully created.'
+      redirect_back(fallback_location: cocktails_path, alert:'Cocktail was successfully created.')
     else
       render :new
     end
