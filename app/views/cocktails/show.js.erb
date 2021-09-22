@@ -1,0 +1,16 @@
+$('.show').bind('ajax:success', function() {
+  $('.card').click(function() {
+    clickToExpandCards($(this));
+  });
+});
+
+function clickToExpandCards($obj){
+  let clickedElement = $obj;
+  if (clickedElement.hasClass('card-expand')) { 
+    clickedElement.find('.card-hidden-text').hide();
+    clickedElement.removeClass('card-expand'); 
+  } else {
+    clickedElement.find('.card-hidden-text').show();
+    clickedElement.addClass('card-expand');
+  }
+};

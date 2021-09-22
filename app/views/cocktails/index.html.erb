@@ -12,20 +12,24 @@
             <h3><%= link_to cocktail.name, cocktail %></h3>
           </div>
           <div class='card-ingredients'>
-            <p><%= cocktail.ingredient1 %></p>
+            <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure1 %></span>
+            <span class='ingredients-item'><%= cocktail.ingredient1 %></span></p>
             <% if cocktail.ingredient2? %>
-              <p><%= cocktail.ingredient2 %></p>
+              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure2 %></span>
+              <span class='ingredients-item'><%= cocktail.ingredient2 %></span></p>
             <% end %>
             <% if cocktail.ingredient3? %>
-              <p><%= cocktail.ingredient3 %></p>
+              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure3 %></span>
+              <span class='ingredients-item'><%= cocktail.ingredient3 %></span></p>
             <% end %>
             <% if cocktail.ingredient4? %>
-              <p><%= cocktail.ingredient4 %></p>
+              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure4 %></span>
+              <span class='ingredients-item'><%= cocktail.ingredient4 %></span></p>
             <% end %>
           </div>
             
           <div class='card-buttons'>
-            <%= link_to 'Details', cocktail, :class => 'card-link', data: {remote: true}. class: 'show' %>
+            <%= link_to 'Details', cocktail, :class => 'card-link', remote: true, class: 'show' %>
             <%= link_to 'Edit', edit_cocktail_path(cocktail), :class => 'card-link' %>
             <%= link_to 'Remove', cocktail, :class => 'card-link', method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'delete' %>
           </div>
