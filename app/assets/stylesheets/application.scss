@@ -193,17 +193,6 @@ img {
   height: 400px;
   background-color: var(--clr-grey);
   justify-self: stretch;
-
-  // overflow: auto;
-  // resize: horizontal;
-  // min-width: 220px;
-  // max-width: 440px;
-
-}
-
-.card-expand {
-  grid-column-end: span 2;
-  grid-row-end: span 2;
 }
 
 .card a {
@@ -245,13 +234,51 @@ img {
   padding-right: 10px;
 }
 
-.hide {
-  display: none;
-}
+// .hide {
+//   display: none;
+// }
 
 .card-expand {
   width: 400px;
-  height: 800px;
+  height: 820px;
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+  background: linear-gradient(to bottom, var(--clr-white) 52%, var(--clr-grey) 48%);
+  border-style: solid;
+  border-color: var(--clr-violet);
+  border-width: 3px;
+  // margin: 20px;
+  display: grid;
+  grid-template-rows: 380px 5px 50px 20px;
+  // grid-template-columns: 1fr;
+  // column-gap: 5px;
+  // row-gap: 0px;
+  // justify-content: left;
+  // border-radius: 10px;
+  // min-width: 100%;
+  // justify-self: stretch;
+
+
+}
+
+.card-expand > .drink-thumb {
+  // max-width: 280px;
+  height: 380px;
+  padding: 20px;
+  object-fit: scale-down;
+  // justify-self: scale-down;
+  // margin-bottom: 3rem;
+  // grid-column: 1/1;
+  // grid-row: 1/span 2;
+  // border-radius: 10px 10px 10px 10px;
+}
+
+.card-expand > .card-name {
+  justify-self: center;
+}
+
+.card-hidden-text {
+  display: none;
 }
 
 .search-card {
