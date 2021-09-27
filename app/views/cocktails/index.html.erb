@@ -12,30 +12,26 @@
             <h3><%= link_to cocktail.name, cocktail, remote: true, class: 'show' %></h3>
           </div>
           <div class='card-ingredients'>
-            <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure1 %></span>
-            <span class='ingredients-item'><%= cocktail.ingredient1 %></span></p>
-            <% if cocktail.ingredient2? %>
-              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure2 %></span>
-              <span class='ingredients-item'><%= cocktail.ingredient2 %></span></p>
-            <% end %>
-            <% if cocktail.ingredient3? %>
-              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure3 %></span>
-              <span class='ingredients-item'><%= cocktail.ingredient3 %></span></p>
-            <% end %>
-            <% if cocktail.ingredient4? %>
-              <p><span class='card-hidden-text ingredients-item'><%= cocktail.measure4 %></span>
-              <span class='ingredients-item'><%= cocktail.ingredient4 %></span></p>
+            <div class='card-hidden-text'>
+              <h4><strong>Ingredients:</strong></h4>
+            </div>
+            <% i = 1 %>
+            <% while !cocktail['ingredient' << i.to_s].nil? do %>
+              <% if i > 4 %>
+                <p><span class='card-hidden-text ingredients-item'><%= cocktail['measure' << i.to_s] %></span>
+                <span class='card-hidden-text ingredients-item'><%= cocktail['ingredient' << i.to_s] %></span></p>
+              <% else %>
+                <p><span class='card-hidden-text ingredients-item'><%= cocktail['measure' << i.to_s] %></span>
+                <span class='ingredients-item'><%= cocktail['ingredient' << i.to_s] %></span></p>
+              <% end %>
+              <% i = i + 1 %>
             <% end %>
 
             <div class='card-hidden-text'>
-              <p>
-                <strong>Instructions:</strong>
-                <%= cocktail.instructions %>
-              </p>
-              <p>
-                <strong>Glass:</strong>
-                <%= cocktail.glass%>
-              </p>
+              <h4><strong>Instructions:</strong></h4>
+                <p><%= cocktail.instructions %></p>
+              <h4><strong>Glass:</strong></h4>
+                <p><%= cocktail.glass%></p>
             </div>
 
           </div>
@@ -43,7 +39,7 @@
           <div class='card-buttons'>
             <%= link_to 'Details', cocktail, :class => 'show', remote: true %>
             <%= link_to 'Edit', edit_cocktail_path(cocktail), :class => 'card-link' %>
-            <%= link_to 'Remove', cocktail, :class => 'card-link', method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'delete' %>
+            <%= link_to 'Remove', cocktail, :class => 'delete', method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
           </div>
       </div>
     <% end %>
