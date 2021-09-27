@@ -259,6 +259,17 @@ img {
   // border-radius: 10px 10px 10px 10px;
 }
 
+.edit-expand {
+  height: 1240px;
+  grid-row-end: span 3;
+  background: linear-gradient(to bottom, var(--clr-white) 30%, var(--clr-grey) 70%);
+}
+
+.field {
+  line-height: 1;
+  font-size: 16px;
+}
+
 .card-expand > .card-name {
   justify-self: center;
 }

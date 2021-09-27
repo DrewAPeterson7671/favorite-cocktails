@@ -1,4 +1,4 @@
-<div class='show'>
+<div class='edit-hide'>
   <%= form_with(model: cocktail, local: true) do |form| %>
     <% if cocktail.errors.any? %>
       <div id="error_explanation">
@@ -29,12 +29,10 @@
     <% 15.times do  |i| %>
 
       <div class="field">
-        <%= form.label :"#{"measure"}#{i+1}", "Measure #{i+1}" %>
         <%= form.text_field :"#{"measure"}#{i+1}" %>
       </div>
 
       <div class="field">
-        <%= form.label :"#{"ingredient"}#{i+1}", "Ingredient #{i+1}" %>
         <%= form.text_field :"#{"ingredient"}#{i+1}" %>
       </div>
 
@@ -49,7 +47,7 @@
 
     <div class="field">
       <%= form.label :instructions %>
-      <%= form.text_area :instructions %>
+      <%= form.text_area :instructions, :cols => '46', :rows => '15'  %>
     </div>
 
     <div class="actions">
