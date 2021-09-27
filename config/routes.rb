@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/search' => 'pages#search', :as => 'search_page'
-  get '/search_results' => 'pages#search_results', :as => 'search_results_page'
+  get '/search/show' => 'pages#show', :as => 'search_show_path'
 
   root to: 'pages#home'
   
