@@ -8,6 +8,12 @@ class PagesController < ApplicationController
     render :home
   end
 
+  def show
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def search
     if params[:search].blank?
       return
