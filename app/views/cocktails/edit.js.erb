@@ -1,0 +1,15 @@
+  $('.edit').off().on('ajax:success', function() {
+    clickToExpandCards($(this).closest('.card'));
+    console.log("click")
+  });
+
+  function clickToExpandCards($obj){
+    if ($obj.hasClass('card-expand')) { 
+      $obj.removeClass('card-expand');
+      $obj.find('.card-ingredient').show() 
+    } else {
+      $obj.addClass('card-expand');
+      $obj.find('.card-ingredient').hide();
+      $obj.find('.form-here').append('<%= j render :partial => 'form', locals: { cocktail: @cocktail } %>');
+    }
+  };
