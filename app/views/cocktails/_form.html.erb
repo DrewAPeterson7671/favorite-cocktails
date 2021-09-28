@@ -1,59 +1,59 @@
-<%= form_with(model: cocktail, local: true) do |form| %>
-  <% if cocktail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cocktail.errors.count, "error") %> prohibited this cocktail from being saved:</h2>
+<div class='edit-hide'>
+  <%= form_with(model: cocktail, local: true) do |form| %>
+    <% if cocktail.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(cocktail.errors.count, "error") %> prohibited this cocktail from being saved:</h2>
 
-      <ul>
-      <% cocktail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cocktail_photo %>
-    <%= form.file_field :cocktail_photo %>
-  </div>
-
-  <h3>Ingredients & Measures</h3>
-
-  <div class="form-grid-containers">
-
-  <% 15.times do  |i| %>
+        <ul>
+        <% cocktail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="field">
-      <%= form.label :"#{"measure"}#{i+1}", "Measure #{i+1}" %>
-      <%= form.text_field :"#{"measure"}#{i+1}" %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
 
     <div class="field">
-      <%= form.label :"#{"ingredient"}#{i+1}", "Ingredient #{i+1}" %>
-      <%= form.text_field :"#{"ingredient"}#{i+1}" %>
+      <%= form.label :cocktail_photo %>
+      <%= form.file_field :cocktail_photo %>
     </div>
 
+    <h3>Ingredients & Measures</h3>
+
+    <div class="form-grid-containers">
+
+    <% 15.times do  |i| %>
+
+      <div class="field">
+        <%= form.text_field :"#{"measure"}#{i+1}" %>
+      </div>
+
+      <div class="field">
+        <%= form.text_field :"#{"ingredient"}#{i+1}" %>
+      </div>
+
+    <% end %>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :glass %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :instructions %>
+      <%= form.text_area :instructions, :cols => '46', :rows => '15'  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+    
   <% end %>
-
-  </div>
-
-  <div class="field">
-    <%= form.label :glass %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instructions %>
-    <%= form.text_area :instructions %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-  
-<% end %>
+</div>
