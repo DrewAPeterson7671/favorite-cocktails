@@ -1,6 +1,5 @@
   $('.show').off().on('ajax:success', function() {
     clickToExpandCards($(this).closest('.card'));
-    console.log("click")
   });
 
   function clickToExpandCards($obj){
@@ -11,7 +10,6 @@
       $obj.find('.card-hidden-text').show();
       $obj.addClass('card-expand');
     }
-    console.log("fired")
   };
 
 
