@@ -208,7 +208,7 @@ img {
 }
 
 .drink-thumb {
-  min-width: 100%;
+  width: 100%;
   height: 220px;
   object-fit: cover;
   justify-self: stretch;
@@ -247,31 +247,81 @@ img {
   grid-template-rows: 380px 5px 50px 20px;
 }
 
-.card-expand > .drink-thumb {
-  // max-width: 280px;
-  height: 380px;
-  padding: 20px;
-  object-fit: scale-down;
-  // justify-self: scale-down;
-  // margin-bottom: 3rem;
-  // grid-column: 1/1;
-  // grid-row: 1/span 2;
-  // border-radius: 10px 10px 10px 10px;
-}
-
 .edit-expand {
+  width: 400px;
   height: 1240px;
+  grid-column-end: span 2;
   grid-row-end: span 3;
   background: linear-gradient(to bottom, var(--clr-white) 30%, var(--clr-grey) 70%);
+  border-style: solid;
+  border-color: var(--clr-violet);
+  border-width: 3px;
+  display: grid;
+  grid-template-rows: 380px 5px 50px;
+  // grid-template-columns: 1fr;
+  // align-self: stretch;
+  // justify-self: auto;
+  // justify-content: center;
 }
 
-.field {
+.edit-expand > .drink-thumb, .card-expand > .drink-thumb {
+  width: 100%;
+  height: 380px;
+  padding: 20px;
+}
+
+.card-expand > .card-name, .edit-expand > .card-name {
+  justify-self: center;
+  // margin-left: -10px;
+}
+
+.edit-expand > .form {
+  width: 100%;
+  height: 90%;
+  margin-top: 10px;
+  justify-self: stretch;
+}
+
+.edit-expand textarea {
+  width: 98%;
+  height: 180px;
+  resize: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-space-15 {
+  margin-top: 15px;
+}
+
+.top-space-5 {
+  margin-top: 5px;
+}
+
+.form-grid-containers {
+  width: 100%;
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  justify-content: center;
+  justify-items: stretch;
+  justify-self: center;
+
+}
+
+.edit-expand label {
+  margin-left: 10px;
+}
+
+.edit-expand input {
+  // margin-left: 10px;
   line-height: 1;
   font-size: 16px;
 }
 
-.card-expand > .card-name {
-  justify-self: center;
+.form-blank {
+  min-width: 30px;
 }
 
 .card-hidden-text {
@@ -374,10 +424,21 @@ img {
 
 // Misc
 
-.form-grid-containers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+
+
+// .card {
+//   display: grid;
+//   grid-template-rows: 220px 5px 50px 20px;
+//   grid-template-columns: 1fr;
+//   column-gap: 5px;
+//   row-gap: 0px;
+//   justify-content: left;
+//   border-radius: 10px;
+//   min-width: 100%;
+//   height: 400px;
+//   background-color: var(--clr-grey);
+//   justify-self: stretch;
+// }
 
 .flash {
   display: inline-block;
