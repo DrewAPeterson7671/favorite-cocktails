@@ -93,6 +93,25 @@ img {
   display: block;
   min-width: 100%;
 }
+
+.button {
+  margin-top: 5px;
+  background-color: var(--clr-violet);
+  color: var(--clr-white);
+  display: block;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button:hover {
+  background-color: var(--clr-fuschsia);
+  color: var(--clr-violet);
+  border-color: var(--clr-violet);
+}
   
 // Navigation Bar
 
@@ -283,6 +302,7 @@ img {
 }
 
 .edit-expand textarea {
+  display: block;
   width: 98%;
   height: 180px;
   resize: none;
