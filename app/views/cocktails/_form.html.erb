@@ -1,6 +1,6 @@
 <div class='edit-hide'>
   <div class='form-grid'>
-    <%= form_with model: cocktail, remote: true, method: :patch  do |form| %>
+    <%= form_with model: cocktail, remote: request.xhr?  do |form| %>
       <% if cocktail.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(cocktail.errors.count, "error") %> prohibited this cocktail from being saved:</h2>
