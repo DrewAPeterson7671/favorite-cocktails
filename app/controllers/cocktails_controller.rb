@@ -14,6 +14,7 @@ class CocktailsController < ApplicationController
   def show
     respond_to do |format|
       format.js
+      format.html
     end
   end
 
@@ -53,9 +54,11 @@ class CocktailsController < ApplicationController
           @cocktail.cocktail_photo.purge
           @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
         end
+        format.js { redirect_to cocktail_path, notice: "Cocktail was successfully updated." }
         format.html { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
         format.json { render :show, status: :ok, location: @cocktail }
       else
+        format.js { render :edit, status: :unprocessable_entity }
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @cocktail.errors, status: :unprocessable_entity }
       end

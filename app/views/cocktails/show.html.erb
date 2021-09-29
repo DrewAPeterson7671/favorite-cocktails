@@ -1,52 +1,41 @@
+<div class='show-page'>  
+  <div class='card card-expand'>
+    <% if @cocktail.cocktail_photo.attached? %>
+      <%= image_tag @cocktail.cocktail_photo, :class => 'drink-thumb' %>
+    <% end %>
+      <div class='card-name'>
+        <h3><%= link_to @cocktail.name, @cocktail, remote: true, class: 'show' %></h3>
+      </div>
+      <div class='form-here'>
+      </div>
+      <div class='card-ingredients'>
+        <div>
+          <h4><strong>Ingredients:</strong></h4>
+        </div>
+        <% i = 1 %>
+        <% while !@cocktail['ingredient' << i.to_s].nil? do %>
+          <% if i > 4 %>
+            <p><span class='ingredients-item'><%= @cocktail['measure' << i.to_s] %></span>
+            <span class='ingredients-item'><%= @cocktail['ingredient' << i.to_s] %></span></p>
+          <% else %>
+            <p><span class='ingredients-item'><%= @cocktail['measure' << i.to_s] %></span>
+            <span class='ingredients-item'><%= @cocktail['ingredient' << i.to_s] %></span></p>
+          <% end %>
+          <% i = i + 1 %>
+        <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
+        <div>
+          <h4><strong>Instructions:</strong></h4>
+            <p><%= @cocktail.instructions %></p>
+          <h4><strong>Glass:</strong></h4>
+            <p><%= @cocktail.glass%></p>
+        </div>
 
-<% if @cocktail.cocktail_photo.attached? %>
-  <%= image_tag @cocktail.cocktail_photo, :class => 'drink-thumb' %>
-<% end %>
-
-<p>
-  <strong>Category:</strong>
-  <%= @cocktail.category %>
-</p>
-
-<p>
-  <strong>Alcoholic:</strong>
-  <%= @cocktail.alcoholic%>
-</p>
-
-<p>
-  <strong>Glass:</strong>
-  <%= @cocktail.glass%>
-</p>
-
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @cocktail.instructions %>
-</p>
-
-<p>  
-  <strong>Ingredients:</strong>
-</p>
-<div class="form-grid-containers">
-  <% 15.times do |i| %>
-    <div>
-      <%= @cocktail[:"#{"measure"}#{i+1}"] %>
-    </div>
-    <div>
-      <%= @cocktail[:"#{"ingredient"}#{i+1}"] %>
-    </div>
-  <% end %>
+      </div>
+        
+      <div class='card-buttons'>
+        <%= link_to 'Edit', edit_cocktail_path(@cocktail), :remote => true, :class => 'edit' %>
+        <%= link_to 'Remove', @cocktail, :class => 'delete', method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
+      </div>
+  </div>
 </div>
-
-<p>
-  <strong>User:</strong>
-  <%= @cocktail.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-<%= link_to 'Back', cocktails_path %>
