@@ -7,7 +7,8 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails or /cocktails.json
   def index
-    @cocktails = current_user.cocktails.paginate(page: params[:page], per_page: 16)
+    @cocktails = set_cocktail_sort.paginate(page: params[:page], per_page: 16)
+
   end
   
   # GET /cocktails/1 or /cocktails/1.json
@@ -86,6 +87,10 @@ class CocktailsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cocktail
       @cocktail = Cocktail.find(params[:id])
+    end
+
+    def set_cocktail_sort
+      @cocktails_sort = current_user.cocktails.order('name ASC')
     end
 
     # Only allow a list of trusted parameters through.
