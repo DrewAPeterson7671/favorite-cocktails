@@ -427,7 +427,47 @@ img {
 
 // Details (show) page
 
+.show-page {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
 
+.show-page > .drink-thumb {
+  width: 380px;
+  height: 380px;
+  object-fit: none;
+  justify-self: center;
+}
+
+// New page
+
+.new-page {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.new-page > .edit-expand {
+  height: 820px;
+}
+
+.new-page label {
+  text-align: center;
+}
+
+
+// .drink-thumb3 {
+//   width: 100%;
+//   height: 220px;
+//   object-fit: cover;
+//   justify-self: stretch;
+//   grid-column: 1/1;
+//   grid-row: 1/span 2;
+//   border-radius: 10px 10px 0px 0px;
+// }
 
 // Search & Favorites Styles
 
