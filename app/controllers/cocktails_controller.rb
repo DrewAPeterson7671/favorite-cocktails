@@ -21,6 +21,10 @@ class CocktailsController < ApplicationController
   # GET /cocktails/new
   def new
     @cocktail = Cocktail.new
+    respond_to do |format|
+      format.js
+      format.html
+    end
     render :new 
   end
 
@@ -39,10 +43,13 @@ class CocktailsController < ApplicationController
     else
       @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
     end
-    if @cocktail.save
-      redirect_back(fallback_location: cocktails_path, alert:'Cocktail was successfully created.')
-    else
-      render :new
+    respond_to do |format|
+      if @cocktail.save
+        format.js { redirect_to @cocktail, alert: "Cocktail was successfully created." }
+        format.html { redirect_to @cocktail, alert: "Cocktail was successfully created." }
+      else
+        render :new
+      end
     end
   end
 
@@ -54,7 +61,7 @@ class CocktailsController < ApplicationController
           @cocktail.cocktail_photo.purge
           @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
         end
-        format.js { redirect_to cocktail_path, notice: "Cocktail was successfully updated." }
+        format.js { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
         format.html { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
         format.json { render :show, status: :ok, location: @cocktail }
       else
