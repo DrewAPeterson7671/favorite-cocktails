@@ -304,7 +304,7 @@ img {
 .edit-expand textarea {
   display: block;
   width: 98%;
-  height: 180px;
+  height: 170px;
   resize: none;
   margin-left: auto;
   margin-right: auto;
@@ -314,9 +314,14 @@ img {
   margin-top: 15px;
 }
 
+.top-space-10 {
+  margin-top: 10px;
+}
+
 .top-space-5 {
   margin-top: 5px;
 }
+
 
 .form-grid-containers {
   width: 100%;
@@ -417,12 +422,12 @@ img {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
-  // object-fit: cover;
+  overflow: Hidden;
+  object-fit: cover;
 }
 
 .splash-image img {
-  margin-top: -60px;
+  margin-top: -30px;
 }
 
 // Details (show) page
@@ -451,13 +456,12 @@ img {
 }
 
 .new-page > .edit-expand {
+  padding-top: 1rem;
   height: 820px;
 }
 
 .new-page label {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
 }
 
 // Search & Favorites Styles

@@ -5,7 +5,6 @@
       <il><%= link_to 'My Favorites', cocktails_path, class: 'nav-fav' %></il>
       <il><%= link_to 'Search for Drinks', search_page_path, class: 'nav-search' %></il>
       <il><%= link_to 'Create Cocktail', new_cocktail_path, class: 'nav-search' %></il>
-      <il><a href="", class="nav-about">About</a></il>
       <% if current_user %>
         <il><%= link_to 'Log Out', destroy_user_session_path, :method => :delete, class: 'nav-login' %></il>
       <% else %>
