@@ -89,6 +89,16 @@ p {
   line-height: .8;
 }
 
+a {
+  color: var(--clr-violet);
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: var(--clr-fuschsia);
+  text-decoration: underline;
+}
+
 img {
   display: block;
   min-width: 100%;
@@ -186,6 +196,37 @@ img {
   font-size: 1.6rem;
 }
 
+// Log In & Registration
+
+// .login > .button {
+//   margin-left: 0;
+//   margin-right: 0;
+// }
+
+.login-card {
+  box-sizing: content-box;
+  width: 325px;
+  // height: 365px;
+  // background: linear-gradient(to bottom, var(--clr-white) 52%, var(--clr-grey) 48%);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: var(--clr-violet);
+  border-width: 3px;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  row-gap: 5px;
+}
+
+// .login-card > .button {
+//   margin-top: 5px;
+//   margin-bottom: 5px;
+// }
 
 // Cards
 .card-grid {
@@ -213,17 +254,6 @@ img {
   height: 400px;
   background-color: var(--clr-grey);
   justify-self: stretch;
-}
-
-.card a {
-  color: var(--clr-violet);
-  text-decoration: none;
-}
-
-.card a:focus,
-.card a:hover {
-  color: var(--clr-fuschsia);
-  text-decoration: underline;
 }
 
 .drink-thumb {
