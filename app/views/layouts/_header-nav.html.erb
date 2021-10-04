@@ -1,19 +1,57 @@
 <header>
-  <div class="navbar">
-    <ul>
-      <il><%= link_to 'Home', root_path, class: 'nav-home' %></il>
-      <il><%= link_to 'My Favorites', cocktails_path, class: 'nav-fav' %></il>
-      <il><%= link_to 'Search for Drinks', search_page_path, class: 'nav-search' %></il>
-      <il><%= link_to 'Create Cocktail', new_cocktail_path, class: 'nav-search' %></il>
-      <% if current_user %>
-        <il><%= link_to 'Log Out', destroy_user_session_path, :method => :delete, class: 'nav-login' %></il>
-      <% else %>
-        <il><%= link_to 'Log In', new_user_session_path, class: 'nav-login' %></il>
-        <il><%= link_to 'Register', new_user_registration_path, class: 'nav-register' %></il>
-      <% end %>
-    </ul>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Home', root_path, class: 'nav-home nav-link active' %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'My Favorites', cocktails_path, class: 'nav-fav nav-link' %>
+        </li>
+        
+        <li class="nav-item">
+          <%= link_to 'Search for Drinks', search_page_path, class: 'nav-search nav-link' %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'Create Cocktail', new_cocktail_path, class: 'nav-search nav-link' %>
+        </li>
+
+        <% if current_user %>
+          <il class="nav-item"><%= link_to 'Log Out', destroy_user_session_path, :method => :delete, class: 'nav-login nav-link' %></il>
+        <% else %>
+          <il class="nav-item"><%= link_to 'Log In', new_user_session_path, class: 'nav-login nav-link' %></il>
+          <il class="nav-item"><%= link_to 'Register', new_user_registration_path, class: 'nav-register nav-link' %></il>
+        <% end %>
+
+      </ul>
+    </div>
   </div>
-  
-<%= render "layouts/logo" %>
+</nav>
+
+      <ul>
+
+        <il><%= link_to 'My Favorites', cocktails_path, class: 'nav-fav' %></il>
+        <il><%= link_to 'Search for Drinks', search_page_path, class: 'nav-search' %></il>
+        <il><%= link_to 'Create Cocktail', new_cocktail_path, class: 'nav-search' %></il>
+        <% if current_user %>
+          <il><%= link_to 'Log Out', destroy_user_session_path, :method => :delete, class: 'nav-login' %></il>
+        <% else %>
+          <il><%= link_to 'Log In', new_user_session_path, class: 'nav-login' %></il>
+          <il><%= link_to 'Register', new_user_registration_path, class: 'nav-register' %></il>
+        <% end %>
+      </ul>
+
+  </div>
+
+    
+  <%= render "layouts/logo" %>
 
 </header>
