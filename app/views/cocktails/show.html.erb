@@ -34,7 +34,7 @@
       </div>
         
       <div class='card-buttons'>
-        <%= link_to 'Home', cocktails_path %>
+        <%= link_to 'My Favorites', cocktails_path %>
         <%= link_to 'Edit', edit_cocktail_path(@cocktail), :remote => true, :class => 'edit' %>
         <%= link_to 'Remove', @cocktail, :class => 'delete', method: :delete, data: { confirm: 'Are you sure?', remote: true } %>
       </div>
