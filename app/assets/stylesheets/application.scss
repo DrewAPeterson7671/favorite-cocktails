@@ -13,7 +13,7 @@
  *
  */
 
- @font-face {
+@font-face {
   font-family: 'Cocktails';
   src: url('Cocktails.ttf');
 }
@@ -153,15 +153,15 @@ img {
 // Header
 
 .logo-grid {
-  margin-top: 4rem;
-  margin-bottom: .5rem;
+  margin-top: 3.8rem;
+  // margin-bottom: .5rem;
   display: grid;
   grid-template-columns: 160px 655px;
   column-gap: 20px;
   row-gap: 0px;
   justify-content: center;
   justify-items: center;
-  padding: .5em 0 1em;
+  // padding: .5em 0 1em;
   
 }
 
