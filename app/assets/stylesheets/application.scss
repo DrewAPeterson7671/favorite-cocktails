@@ -477,15 +477,6 @@ img {
   display: none;
 }
 
-.search-card {
-  width: 400px;
-  height: 800px;
-}
-
-.search-grid {
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-}
-
 .pagination {
   margin-top: 10px;
   display: block;
