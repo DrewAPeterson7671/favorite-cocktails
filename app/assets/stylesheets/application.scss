@@ -204,8 +204,8 @@ img {
     grid-column: 1;
     grid-row: 3;
     align-self: center;
-    min-width: 160px;
-    max-width: 160px;
+    min-width: 100px;
+    max-width: 150px;
     height: auto;
     margin-top: 10px;
   }
@@ -231,7 +231,13 @@ img {
     font-size: 4vw;
   }
   .logo-img{
-    min-width: 100px;
+    width: 130px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo-img{
+    width: 100px;
   }
 }
 
@@ -334,7 +340,7 @@ img {
   align-self: end;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
@@ -361,7 +367,7 @@ img {
   grid-template-rows: 380px 5px 50px 20px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
   .card-expand {
     width: 100%;
     height: fit-content;
@@ -371,21 +377,7 @@ img {
     justify-content: center;
     text-align: left;
   }
-  // .card-expand > label {
-  //   // display: inline-block;
-  //   // text-align: center;
-  //   margin: 0 auto;
-  // }
-  // .card-expand > input[type='cocktail_name'] {
-  //   // display: inline-block;
-  //   // text-align: center;
-  //   margin: 0 auto;
-  // }
-  // .card-expand > #cocktail_name {
-  //   display: block;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
+
 }
 
 .edit-expand {
@@ -399,21 +391,15 @@ img {
   border-width: 3px;
   display: grid;
   grid-template-rows: 380px 5px 50px;
-  // grid-template-columns: 1fr;
-  // align-self: stretch;
-  // justify-self: auto;
-  // justify-content: center;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
   .edit-expand {
     width: 100%;
     height: fit-content;
     grid-column-end: span 1;
     overflow: auto;
     padding: 5px;
-    // text-align: center;
-    // grid-row-end: span 1;
   }
 }
 
@@ -579,6 +565,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  padding: 5px;
   // text-align: left;
 }
 
@@ -632,6 +619,44 @@ img {
   background-color: var(--clr-violet);
   margin: 3px;
   z-index: 1;
+}
+
+@media only screen and (max-width: 430px) {
+  .about {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    justify-content: left;
+    // width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    // text-align: left;
+  }
+  .about-tab1, .about-tab2, .about-tab3 {
+    grid-column-start: 1;
+    margin: 5px;
+    overflow: auto;
+    white-space: nowrap;
+    justify-self: left;
+  }
+  .about-tab2 {
+    margin-left: 50px;
+  }
+  .about-tab3 {
+    margin-left: 100px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .about-text {
+    width: 13rem;
+    height: 8rem;
+  }
+  
+  .about-shadow {
+    width: 13rem;
+    height: 8rem;
+  }
 }
 
 
