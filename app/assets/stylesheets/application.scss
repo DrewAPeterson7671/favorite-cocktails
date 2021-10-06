@@ -108,13 +108,16 @@ img {
   margin-top: 5px;
   background-color: var(--clr-violet);
   color: var(--clr-white);
-  display: block;
   border-radius: 5px;
   border-width: 2px;
   border-style: solid;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.block-button {
+  display: block;
 }
 
 .button:hover {
@@ -161,6 +164,7 @@ img {
   row-gap: 0px;
   justify-content: center;
   justify-items: center;
+
   // padding: .5em 0 1em;
   
 }
@@ -194,6 +198,7 @@ img {
   .logo-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr, 1fr, 1fr;
+    margin-bottom: 15px;
   }
   .logo-img {
     grid-column: 1;
@@ -202,6 +207,7 @@ img {
     min-width: 160px;
     max-width: 160px;
     height: auto;
+    margin-top: 10px;
   }
   .logo-title {
     align-self: center;
@@ -223,6 +229,9 @@ img {
   }
   .synopsis {
     font-size: 4vw;
+  }
+  .logo-img{
+    min-width: 100px;
   }
 }
 
@@ -274,7 +283,7 @@ img {
 // Cards
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  grid-template-columns: repeat(auto-fit, minmax(245px, 260px));
   grid-auto-flow: row;
   grid-gap: 1em;
   align-items: center;
@@ -293,7 +302,7 @@ img {
   row-gap: 0px;
   justify-content: left;
   border-radius: 10px;
-  min-width: 100%;
+  min-width: 245px;
   height: 400px;
   background-color: var(--clr-grey);
   justify-self: stretch;
@@ -325,8 +334,21 @@ img {
   align-self: end;
 }
 
+@media only screen and (max-width: 420px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    height: 100%;
+  }
+  .card-buttons {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
 .card-expand {
-  width: 400px;
+  width: 100%;
   height: 820px;
   grid-column-end: span 2;
   grid-row-end: span 2;
@@ -339,8 +361,35 @@ img {
   grid-template-rows: 380px 5px 50px 20px;
 }
 
+@media only screen and (max-width: 420px) {
+  .card-expand {
+    width: 100%;
+    height: fit-content;
+    overflow: auto;
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+    justify-content: center;
+    text-align: left;
+  }
+  // .card-expand > label {
+  //   // display: inline-block;
+  //   // text-align: center;
+  //   margin: 0 auto;
+  // }
+  // .card-expand > input[type='cocktail_name'] {
+  //   // display: inline-block;
+  //   // text-align: center;
+  //   margin: 0 auto;
+  // }
+  // .card-expand > #cocktail_name {
+  //   display: block;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+}
+
 .edit-expand {
-  width: 400px;
+  width: 100%;
   height: 1240px;
   grid-column-end: span 2;
   grid-row-end: span 3;
@@ -354,6 +403,18 @@ img {
   // align-self: stretch;
   // justify-self: auto;
   // justify-content: center;
+}
+
+@media only screen and (max-width: 420px) {
+  .edit-expand {
+    width: 100%;
+    height: fit-content;
+    grid-column-end: span 1;
+    overflow: auto;
+    padding: 5px;
+    // text-align: center;
+    // grid-row-end: span 1;
+  }
 }
 
 .edit-expand > .drink-thumb, .card-expand > .drink-thumb {
