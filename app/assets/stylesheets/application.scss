@@ -340,7 +340,7 @@ img {
   align-self: end;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 600px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
@@ -367,7 +367,7 @@ img {
   grid-template-rows: 380px 5px 50px 20px;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 600px) {
   .card-expand {
     width: 100%;
     height: fit-content;
@@ -393,7 +393,7 @@ img {
   grid-template-rows: 380px 5px 50px;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 600px) {
   .edit-expand {
     width: 100%;
     height: fit-content;
