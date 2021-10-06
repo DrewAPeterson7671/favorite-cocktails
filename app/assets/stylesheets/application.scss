@@ -165,6 +165,7 @@ img {
   
 }
 
+
 .logo-img {
   grid-column: 1/1;
   grid-row: 1/span 2;
@@ -187,6 +188,42 @@ img {
   grid-row: 2/2;
   color: var(--clr-fuschsia);
   font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 840px) {
+  .logo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr;
+  }
+  .logo-img {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: center;
+    min-width: 160px;
+    max-width: 160px;
+    height: auto;
+  }
+  .logo-title {
+    align-self: center;
+    font-family: var(--ff-logo);
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+  }
+  .synopsis {
+    align-self: start;
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .logo-title {
+    font-size: 10vw;
+  }
+  .synopsis {
+    font-size: 4vw;
+  }
 }
 
 // Log In & Registration
@@ -213,6 +250,24 @@ img {
 
 .login-item {
   text-align: center;
+}
+
+@media only screen and (max-width: 340px) {
+  .login-card {
+    // max-width: 310px;
+    width: 80%;
+  }
+  .login-card input[type='email'] {
+    width: 260px;
+  }
+  .login-card input[type='password'] {
+    width: 260px;
+  }
+  .login-card input[type='submit'] {
+    width: 80%;
+    height: auto;
+    white-space: normal;
+  }
 }
 
 
