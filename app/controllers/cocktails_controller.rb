@@ -8,7 +8,7 @@ class CocktailsController < ApplicationController
   # GET /cocktails or /cocktails.json
   def index
     @cocktails = set_cocktail_sort.paginate(page: params[:page], per_page: 16)
-
+    render :index
   end
   
   # GET /cocktails/1 or /cocktails/1.json
