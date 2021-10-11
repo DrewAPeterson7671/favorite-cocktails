@@ -7,27 +7,30 @@ class Drink
 
   def initialize(name_search)
     @options = { query: { s: name_search } }
+    # @flash = flash
   end
 
   def drink_name
-    self.class.get("/api/json/v1/1/search.php", @options)
+    begin self.class.get("/api/json/v1/1/search.php", @options)
+    rescue HTTParty::Error, SocketError => e
+      puts('API not avaible, check internet connection')
+    # rescue Errno::ECONNREFUSED => error
+    #   puts('API not avaible, check internet connection')
+      # @flash.now[:alert] = 'Please check your internet connection.  Error message: ' + error.inspect
+    end 
   end
+
+  private
+
+  attr_accessor :name_search, :controller
+
 end
 
-# drinks = Drinks.new("margarita")
-# puts drinks.drink_name
+
 test1 = Drink.new("kamikaze")
 response = test1.drink_name
-
 parsed_json = JSON(response.body)
-# puts parsed_json.class
 
-
-# puts parsed_json["drinks"]
-
-# parsed_json["drinks"].each do |item|
-#   puts item["strDrink"]
-# end
 
 
 
