@@ -1,5 +1,3 @@
-<%= render "layouts/logo" %>
-
 <div class='login-card'>
   <p>Hello <%= @email %>!</p>
   <% if @resource.try(:unconfirmed_email?) %>

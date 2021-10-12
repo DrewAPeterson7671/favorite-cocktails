@@ -8,9 +8,10 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true
   validates :instructions, presence: true
   validates :ingredient1, presence: true
+  validates_length_of :name, maximum: 50
   validates_length_of :instructions, maximum: 500
   validates_length_of :ingredient1, maximum: 50
-  validates_length_of :measure1, maximum: 50
+  validates_length_of :measure1, maximum: 30
   
   def self.capture_api_image(cocktail)
     filename = File.basename(URI.parse(cocktail.api_image_url).path)
