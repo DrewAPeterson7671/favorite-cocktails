@@ -17,6 +17,7 @@ class CocktailsController < ApplicationController
       format.js
       format.html
     end
+    render :show
   end
 
   # GET /cocktails/new
@@ -33,7 +34,9 @@ class CocktailsController < ApplicationController
   def edit
     respond_to do |format|
       format.js
+      format.html
     end
+    render :edit
   end
 
   # POST /cocktails or /cocktails.json
@@ -49,7 +52,8 @@ class CocktailsController < ApplicationController
         format.js { redirect_to @cocktail, alert: "Cocktail was successfully created." }
         format.html { redirect_to @cocktail, alert: "Cocktail was successfully created." }
       else
-        render :new
+        format.js { render :new }
+        format.html { render :new }
       end
     end
   end
@@ -57,7 +61,7 @@ class CocktailsController < ApplicationController
   # PATCH/PUT /cocktails/1 or /cocktails/1.json
   def update
     respond_to do |format|
-      if @cocktail.update(cocktail_params)
+      if @cocktail.update!(cocktail_params)
         if params[:cocktail][:cocktail_photo].present?
           @cocktail.cocktail_photo.purge
           @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])

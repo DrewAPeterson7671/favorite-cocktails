@@ -16,7 +16,6 @@ class Drink
       puts('API not avaible, check internet connection')
     # rescue Errno::ECONNREFUSED => error
     #   puts('API not avaible, check internet connection')
-      # @flash.now[:alert] = 'Please check your internet connection.  Error message: ' + error.inspect
     end 
   end
 
