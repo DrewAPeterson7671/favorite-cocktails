@@ -7,6 +7,8 @@
       <div class='card'>
         <% if cocktail.cocktail_photo.attached? %>
           <%= image_tag cocktail.cocktail_photo, :class => 'drink-thumb' %>
+        <% else %>
+          <%= image_tag 'blank-cocktail.png', class:'drink-thumb', alt: 'Image Not Found' %>
         <% end %>
           <div class='card-name'>
             <h3><%= link_to cocktail.name, cocktail, remote: true, class: 'show' %></h3>

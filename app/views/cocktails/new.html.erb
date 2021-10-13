@@ -1,7 +1,9 @@
 <h2>New Cocktail</h2>
 
 <div class='new-page'>
-  <div class='new-card'>
+  <div class='card edit-expand'>
+
+    <%= render partial: "cocktail_image", locals: { product: @cocktail } %>
 
     <%= render 'errors', cocktail: @cocktail %>
     <%= render 'form', cocktail: @cocktail %>
