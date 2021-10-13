@@ -315,6 +315,7 @@ img {
 }
 
 .drink-thumb {
+  background-color: var(--clr-white);
   width: 100%;
   height: 220px;
   object-fit: cover;
@@ -676,31 +677,6 @@ img {
   margin-bottom: 1rem;
 }
 
-// .new-card {
-//   padding-top: 1rem;
-//   width: 100%;
-//   height: 960px;
-//   background: linear-gradient(to bottom, var(--clr-white) 30%, var(--clr-grey) 70%);
-//   border-style: solid;
-//   border-color: var(--clr-violet);
-//   border-width: 3px;
-//   border-radius: 10px;
-//   display: grid;
-//   grid-template-rows: 380px 5px 50px;
-// }
-
-// @media only screen and (max-width: 470px) {
-//   .new-card {
-//     height: 1000px;
-//   }
-// }
-
-// @media only screen and (max-width: 360px) {
-//   .new-card {
-//     height: 1040px;
-//   }
-// }
-
 .new-page label {
   margin-left: 20px;
 }
@@ -737,4 +713,17 @@ img {
   text-align: center;
 }
 
+@media only screen and (max-width: 435px) {
+  #cocktail_cocktail_photo {
+    margin-left: 20px;
+  }
+}
 
+@media only screen and (max-width: 350px) {
+  #cocktail_glass, #cocktail_name {
+    width: 200px;
+  }
+  #cocktail_cocktail_photo {
+    margin-left: 20px;
+  }
+}
