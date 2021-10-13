@@ -1,0 +1,5 @@
+<% if @cocktail.cocktail_photo.attached? %>
+  <%= image_tag @cocktail.cocktail_photo, class:"drink-thumb" %><br>
+  <% else %>
+    <%= image_tag 'blank-cocktail.png', class:'drink-thumb', alt: 'Image Not Found' %><br>
+<% end %>

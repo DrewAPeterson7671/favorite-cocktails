@@ -1,8 +1,8 @@
 <div class='show-page'>  
   <div class='card card-expand'>
-    <% if @cocktail.cocktail_photo.attached? %>
-      <%= image_tag @cocktail.cocktail_photo, :class => 'drink-thumb' %>
-    <% end %>
+
+    <%= render partial: "cocktail_image", locals: { product: @cocktail } %>
+
       <div class='card-name'>
         <h3><%= link_to @cocktail.name, @cocktail, remote: true, class: 'show' %></h3>
       </div>
