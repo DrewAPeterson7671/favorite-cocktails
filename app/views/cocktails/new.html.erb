@@ -3,10 +3,10 @@
 <div class='new-page'>
   <div class='card edit-expand'>
 
-    <%= render partial: "cocktail_image", locals: { product: @cocktail } %>
+    <%= render partial: "cocktail_image", locals: { cocktail: @cocktail } %>
 
-    <%= render 'errors', cocktail: @cocktail %>
     <%= render 'form', cocktail: @cocktail %>
 
   </div>
 </div>
+

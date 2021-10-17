@@ -21,3 +21,33 @@
 Failed to open TCP connection to www.thecocktaildb.com:80 (getaddrinfo: Temporary failure in name resolution)
 
 
+  def form_errors
+    if @cocktail.errors.any?
+      Cocktail.pluralize(@cocktail.errors.count, "error").concat(' prohibited this cocktail from being saved:')
+      @cocktail.errors.full_messages.each do |m|
+        repond_to do |format|
+          format.html { render :text => m }
+        end
+      end
+    end
+  end  
+
+  <% if cocktail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cocktail.errors.count, "error") %> prohibited this cocktail from being saved:</h2>
+      <ul>
+        <% cocktail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%# If I need to backtrack, this block works in create %>
+
+
+    if @cocktail.save
+      redirect_to @cocktail, alert: "Cocktail was successfully created."
+    else
+        render :new
+    end
