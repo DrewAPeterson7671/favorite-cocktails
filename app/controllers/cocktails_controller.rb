@@ -27,7 +27,7 @@ class CocktailsController < ApplicationController
       format.js
       format.html
     end
-    render :new 
+    render :new
   end
 
   # GET /cocktails/1/edit
@@ -49,12 +49,13 @@ class CocktailsController < ApplicationController
       @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
     end
 
-    
-
     if @cocktail.save
       redirect_to @cocktail, alert: "Cocktail was successfully created."
     else
-        render :new
+      respond_to do |format|
+        format.js { render :new }
+        format.html { render :new }
+      end
     end
 
   end
