@@ -1,4 +1,5 @@
 class SendgridWebMailer < ActionMailer::Base
+  require 'sendgrid-ruby'
   include Sendgrid
 
   def initialize
