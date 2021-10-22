@@ -7,7 +7,7 @@ class SendgridWebMailer < ActionMailer::Base
 
   def send_some_email(record, token)
     mail = Mail.new
-    mail.from = Email.new(email: mycocktails@mycocktails.devmojo.org)
+    mail.from = Email.new(email: 'mycocktails@mycocktails.devmojo.org')
     mail.subject = 'My Favorite Cocktails Registration'
 
     content = Content.new(
