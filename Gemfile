@@ -45,6 +45,7 @@ gem 'aws-sdk-s3', '~> 1'
 gem 'bootstrap', '~> 5.1.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'sendgrid-ruby'
+gem 'sendgrid-actionmailer'
 
 
 
