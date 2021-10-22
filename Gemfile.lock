@@ -309,6 +309,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sendgrid-actionmailer (3.2.0)
+      mail (~> 2.7)
+      sendgrid-ruby (~> 6.4)
     sendgrid-ruby (6.5.2)
       ruby_http_client (~> 3.4)
     shoulda-matchers (5.0.0)
@@ -390,6 +393,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails
   sass-rails (~> 5.0)
+  sendgrid-actionmailer
   sendgrid-ruby
   shoulda-matchers
   simplecov
