@@ -62,19 +62,15 @@ class CocktailsController < ApplicationController
 
   # PATCH/PUT /cocktails/1 or /cocktails/1.json
   def update
-    if @cocktail.update!(cocktail_params)
+    if @cocktail.update(cocktail_params)
       if params[:cocktail][:cocktail_photo].present?
         @cocktail.cocktail_photo.purge
         @cocktail.cocktail_photo.attach(params[:cocktail][:cocktail_photo])
       end
-      respond_to do |format|
-        format.js { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
-        format.html { redirect_to @cocktail, notice: "Cocktail was successfully updated." }
-        format.json { render :show, status: :ok, location: @cocktail }
-      end
+      redirect_to @cocktail, notice: "Cocktail was successfully updated."
     else
       respond_to do |format|
-        format.js
+        format.js { render :edit }
         format.html { render :edit }
         format.json { render json: @cocktail.errors, status: :unprocessable_entity }
       end
