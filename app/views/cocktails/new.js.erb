@@ -8,3 +8,7 @@ window.addEventListener("load", () => {
     element.insertAdjacentHTML("beforeend", "<p>ERROR</p>");
   });
 });
+
+<% if @cocktail.errors.any? %>
+  alert("ERROR(S):\n<%= j @cocktail.errors.full_messages.join("\n").html_safe %>")
+<% end %>
