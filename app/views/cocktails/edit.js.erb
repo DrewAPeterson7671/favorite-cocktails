@@ -13,3 +13,7 @@
       $obj.find('.form-here').append('<%= j render :partial => 'form', locals: { cocktail: @cocktail } %>');
     }
   };
+
+<% if @cocktail.errors.any? %>
+  alert("ERROR(S):\n<%= j @cocktail.errors.full_messages.join("\n").html_safe %>")
+<% end %>
