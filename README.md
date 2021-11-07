@@ -1,6 +1,6 @@
 # _Cocktails_
 
-#### _Application to find and save coctail recipes, 8/5/2021_
+#### _Application to search and save coctail recipes, 8/5/2021_
 
 #### By _**Drew Peterson**_
 
@@ -8,10 +8,12 @@
 
 _This application:_
 
-* Create from scratch Ruby/Rails app for a food importer showcasing their imported products.
+* Created to consume a cocktail recipe API and save the search results for later easy reference.
 
 
-_See the deployed app on Heroku:_
+_Website:_
+
+* http://mycocktails.devmojo.org/
 
 ## Setup/Installation Requirements
 
@@ -22,18 +24,15 @@ _See the deployed app on Heroku:_
 * DATABASE INSTRUCTIONS - from terminal in the the root directory of this project, run these commands:
 *   rake db:create
 *   rake db:migrate
-*   rake db:seed
 * Product environment Active Storage requires configuration of AWS S3.  Development environment will store content locally.
 * Open a terminal and type "rails s"
 * Open a web browser to https://localhost:3000.
 
 ## Known Bugs
 
+_The web page will show sercurity warnings because it does not have an SSL Certificate.  Heroku Free Dynos do not currently support SSL Certificates and there is no current budget to support paid dynos._
+
 _This site is hosted on the free Heroku service, so the dynos that run it go to sleep until the site is accessed.  So the first load is slower than when the dyno awakens.  This isn't a bug as much as a budget constraint._
-
-_All images of products and reviews are hosted on S3 except for about 3% of them.  This is done per the true use case that both the vendor and users would upload all images to S3.  All initial product and reviewer avatar images could have been loaded to Heroku to boost speed, but would be window dressing, in my opinion. It would be untrue to the use case.  S3 images load slower, but this app is fully functional to the true use case. This is not a bug as much as a choice of realism over cheating for a faster load of the presentation._
-
-_When a user uses a sort of a product or review, and then clicks on an individual product or review, the next and previous buttons will take the user to the next product review or product ID without considering what was next in that list sort.  For example, if they list products by alphabetical order, click on Almonds and view the Almonds page, the next and previous buttons will take them to a product, but not the next in alphabetical order._
 
 ## Support and contact details
 
@@ -41,7 +40,7 @@ _Please contact me directly via email at drew.a.peterson@hotmail.com with any bu
 
 ## Technologies Used
 
-_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Rails Active Storage, SCSS_
+_Ruby 2.6.5, Rails 5.2.6, Postgres SQL, Heroku, AWS S3, Rails Active Storage, Ajax, Javascript, SCSS, HTTParty, Bootstrap, Sendgrid._
 
 ### License
 
